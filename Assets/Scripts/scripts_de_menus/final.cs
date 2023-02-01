@@ -1,0 +1,30 @@
+﻿using System;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+// Token: 0x02000005 RID: 5
+public class final : MonoBehaviour
+{
+	public bool botonm = false;
+	// Token: 0x0600000C RID: 12 RVA: 0x00002397 File Offset: 0x00000597
+	private void Start()
+	{
+	}
+
+	// Token: 0x0600000D RID: 13 RVA: 0x00002399 File Offset: 0x00000599
+	private void Update()
+	{
+		if (Input.GetAxis("m") < 0f || botonm == true)
+		{
+			SceneManager.LoadScene("menu_de_carga");
+		}
+	}
+		public void boton_m()
+    {
+        botonm = true;
+    }
+	public void Detenerm()
+    {
+        botonm = false;
+    }
+}
