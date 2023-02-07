@@ -533,51 +533,33 @@ public class jugador : MonoBehaviour
 		}
 		if (manager.juego == 0)
 		{
+			if (Input.GetAxis("Horizontal") > 0f )
+			{
+				base.transform.Translate (-1 * Time.deltaTime * Vector3.left* velocidad);
+			}
+			if (Input.GetAxis("Horizontal") < 0f)
+			{
+				base.transform.Translate (1 * Time.deltaTime * Vector3.left* velocidad);
+			}
+			if (Input.GetAxis("Vertical") > 0f)
+			{
+				base.transform.Translate  (-1 * Time.deltaTime * Vector3.back * velocidad);
+			}
+			if (Input.GetAxis("Vertical") < 0f )
+			{
+				base.transform.Translate (1  * Time.deltaTime * Vector3.back* velocidad);
+			}
 
-			if (Input.GetAxis("Vertical") > 0f && subir == false && bajar == false && moverdelante == true || botonarr == true && subir == false && bajar == false && moverdelante == true  )
-			{
-				base.transform.Translate(-Vector3.back * 2f * Time.deltaTime);
-			}
-			if (Input.GetAxis("Horizontal") > 0f && this.tiempogiro > 1f|| botonder == true && this.tiempogiro > 1f)
-			{
-					this.tiempogiro = 0f;
-					girotder = true;
-					girovalor = base.transform.eulerAngles.y;
-					moverdelante = false;
-				
-			}
-			if (Input.GetAxis("Horizontal") < 0f && this.tiempogiro > 1f || botonizq == true && this.tiempogiro > 1f)
-			{
-				this.tiempogiro = 0f;
-				girotizq = true;
-				girovalor = base.transform.eulerAngles.y;
-				moverdelante = false;
-				
-			}
-			if (tiempogiro > 1f)
-			{
-				girotder = false;
-				girotizq = false;
-				moverdelante = true;
-			}
-			if (girotder == true)
-			{
-				if (base.transform.eulerAngles.y <= girovalor + 90f)
-				{
-					base.transform.Rotate(Vector3.up, Time.deltaTime * 90f);
-				}
+			rotationinput.x = Input.GetAxis("Mouse X") * rotspeed * Time.deltaTime;
+            rotationinput.y = Input.GetAxis("Mouse Y") * rotspeed * Time.deltaTime;
 
-			}
-			if (girotizq == true)
-			{
-				if (base.transform.eulerAngles.y >= girovalor - 90f)
-				{
-					base.transform.Rotate(Vector3.down, Time.deltaTime * 90f);
-				}
+            cameraverticalangle +=  rotationinput.y;
+            cameraverticalangle = Mathf.Clamp(cameraverticalangle, -50 , 20);
+            
+            transform.Rotate(Vector3.up * rotationinput.x);
+            camara.transform.localRotation = Quaternion.Euler(-cameraverticalangle,transform.eulerAngles.y,0);
 
-			}
-			
-			this.tiempogiro += Time.deltaTime;
+            camara.transform.position = Vector3.MoveTowards(camara.transform.position,transform.position,7 * Time.deltaTime);
 		}
 		if (manager.juego == 10)
 		{
@@ -672,18 +654,18 @@ public class jugador : MonoBehaviour
 		{
 			if (!this.dentrotienda)
 			{
-				this.ascensortut.text = "(M) para subir de planta  (N) para bajar de planta";
+				this.ascensortut.text = "(click derecho) o (b) para subir de planta  (click izquierdo) o (x) para bajar de planta";
 			}
 				if (manager.piso == 5)
 			{
-				this.ascensortut.text = "(M) para ir a la torre del tiempo (n) para bajar de planta";
+				this.ascensortut.text = "(click derecho) o (b) para ir a la torre del tiempo (click izquierdo) o (x) para bajar de planta";
 			}
 			this.ascensor = true;
 			
 		}
 		if (col.gameObject.tag == "ascensor" && manager.juego == 4)
 		{
-			this.ascensortut.text = "(M) para subir de planta  ";
+			this.ascensortut.text = "(click derecho) o (b) para subir de planta  ";
 			this.ascensor = true;
 		}
 	}

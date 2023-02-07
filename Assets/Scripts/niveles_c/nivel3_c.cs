@@ -14,7 +14,7 @@ public class nivel3_c : MonoBehaviour
 	// Token: 0x06000018 RID: 24 RVA: 0x000024DD File Offset: 0x000006DD
 	private void Update()
 	{
-		if (Input.GetAxis("m") < 0f || this.botonm == true)
+		if (Input.GetAxis("Jump") > 0f )
 		{
 			SceneManager.LoadScene("nivel3");
 		}

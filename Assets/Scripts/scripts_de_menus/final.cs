@@ -14,7 +14,7 @@ public class final : MonoBehaviour
 	// Token: 0x0600000D RID: 13 RVA: 0x00002399 File Offset: 0x00000599
 	private void Update()
 	{
-		if (Input.GetAxis("m") < 0f || botonm == true)
+		if (botonm == true)
 		{
 			SceneManager.LoadScene("menu_de_carga");
 		}

@@ -15,11 +15,11 @@ public class inicio1 : MonoBehaviour
 	// Token: 0x0600001B RID: 27 RVA: 0x00002528 File Offset: 0x00000728
 	private void Update()
 	{
-		if (Input.GetAxis("m") < 0f || this.botonm == true)
+		if (this.botonm == true)
 		{
 			SceneManager.LoadScene("menu_de_carga");
 		}
-		if (Input.GetAxis("n") < 0f || this.botonn == true)
+		if (this.botonn == true)
 		{
 			PlayerPrefs.DeleteAll();
 			SceneManager.LoadScene("lallegada");

@@ -24,7 +24,7 @@ public class inicio : MonoBehaviour
 	private void Update()
 	{
 
-		if (Input.GetAxis("m") < 0f || this.botonm == true)
+		if (this.botonm == true)
 		{
 			if (gemas >= 1)
 			{
@@ -35,7 +35,7 @@ public class inicio : MonoBehaviour
 				SceneManager.LoadScene("lallegada");
 			}	
 		}
-		if (Input.GetAxis("n") < 0f || this.botonn == true)
+		if (this.botonn == true)
 		{
 			SceneManager.LoadScene("borrar_partida");
 		}
