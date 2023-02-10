@@ -324,7 +324,6 @@ GameObject:
   - component: {fileID: 103}
   - component: {fileID: 75}
   - component: {fileID: 64}
-  - component: {fileID: 70}
   - component: {fileID: 86}
   m_Layer: 0
   m_Name: jugador
@@ -1356,14 +1355,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!81 &70
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 15}
-  m_Enabled: 1
 --- !u!104 &71
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -1392,7 +1383,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.32455516, g: 0.06893887, b: 0.0026178309, a: 1}
+  m_IndirectSpecularColor: {r: 0.08467357, g: 0.005785706, b: 0.00022206595, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!108 &72
 Light:

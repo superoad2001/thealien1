@@ -409,7 +409,7 @@ public class manager : MonoBehaviour
 		jugador jugador = UnityEngine.Object.FindObjectOfType<jugador>();
 		manager manager = UnityEngine.Object.FindObjectOfType<manager>();
 		
-		if (this.juego == 0 && this.piso == 1 || this.juego == 0 && this.piso == 2 || this.juego == 0 && this.piso == 3 || this.juego == 0 && this.piso == 4 )
+		if (this.juego == 0 && this.piso == 1 && jugador.dentrotienda == false || this.juego == 0 && this.piso == 2 && jugador.dentrotienda == false|| this.juego == 0 && this.piso == 3 && jugador.dentrotienda == false|| this.juego == 0 && this.piso == 4 && jugador.dentrotienda == false)
 		{
 			this.cuentamonedas.text = "monedas:  " + this.monedas;
 			this.cuentagemas.text = "gemas:  " + this.gemas;

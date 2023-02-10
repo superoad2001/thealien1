@@ -84,7 +84,11 @@ public class manager2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        manager manager = UnityEngine.Object.FindObjectOfType<manager>();
+        if(manager.juego != -1)
+        {
         contador += 1 * Time.deltaTime;
         this.crono.text = "crono : " + contador;
+        }
     }
 }

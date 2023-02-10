@@ -16,7 +16,7 @@ public class Monedav : MonoBehaviour
 	}
 	public int velocidadmaxima = 20;
 	// Token: 0x0600002A RID: 42 RVA: 0x00003900 File Offset: 0x00001B00
-	private void OnTriggerEnter(Collider col)
+	private void OnTriggerStay(Collider col)
 	{
 		manager manager = UnityEngine.Object.FindObjectOfType<manager>();
 		if (col.gameObject.tag == "Player" && manager.tengovel == 1)

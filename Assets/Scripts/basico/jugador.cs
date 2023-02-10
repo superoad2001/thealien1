@@ -342,8 +342,7 @@ public class jugador : MonoBehaviour
 		{
 			this.tiempovel = 0f;
 			this.tiempovelint = 0;
-			if(velocidad > 10)
-			{this.velocidad = this.velocidadaux;}
+			this.velocidad = this.velocidadaux;
 		}
 		this.tiempovel += Time.deltaTime;
 		this.tiempovelint = (int)this.tiempovel;
@@ -503,21 +502,24 @@ public class jugador : MonoBehaviour
 		}
 		if (manager.juego == 4)
 		{
-			if (Input.GetAxis("Horizontal") > 0f )
+			if(subir == false && bajar == false)
 			{
-				base.transform.Translate (-1 * Time.deltaTime * Vector3.left* velocidad);
-			}
-			if (Input.GetAxis("Horizontal") < 0f)
-			{
-				base.transform.Translate (1 * Time.deltaTime * Vector3.left* velocidad);
-			}
-			if (Input.GetAxis("Vertical") > 0f)
-			{
-				base.transform.Translate  (-1 * Time.deltaTime * Vector3.back * velocidad);
-			}
-			if (Input.GetAxis("Vertical") < 0f )
-			{
-				base.transform.Translate (1  * Time.deltaTime * Vector3.back* velocidad);
+				if (Input.GetAxis("Horizontal") > 0f )
+				{
+					base.transform.Translate (-1 * Time.deltaTime * Vector3.left* velocidad);
+				}
+				if (Input.GetAxis("Horizontal") < 0f)
+				{
+					base.transform.Translate (1 * Time.deltaTime * Vector3.left* velocidad);
+				}
+				if (Input.GetAxis("Vertical") > 0f)
+				{
+					base.transform.Translate  (-1 * Time.deltaTime * Vector3.back * velocidad);
+				}
+				if (Input.GetAxis("Vertical") < 0f )
+				{
+					base.transform.Translate (1  * Time.deltaTime * Vector3.back* velocidad);
+				}
 			}
 
 			rotationinput.x = Input.GetAxis("Mouse X") * rotspeed * Time.deltaTime;
@@ -531,7 +533,7 @@ public class jugador : MonoBehaviour
 
             camara.transform.position = Vector3.MoveTowards(camara.transform.position,transform.position,7 * Time.deltaTime);
 		}
-		if (manager.juego == 0)
+		if (manager.juego == 0 && subir == false && bajar == false )
 		{
 			if (Input.GetAxis("Horizontal") > 0f )
 			{
@@ -550,6 +552,9 @@ public class jugador : MonoBehaviour
 				base.transform.Translate (1  * Time.deltaTime * Vector3.back* velocidad);
 			}
 
+		}
+		if (manager.juego == 0 )
+		{
 			rotationinput.x = Input.GetAxis("Mouse X") * rotspeed * Time.deltaTime;
             rotationinput.y = Input.GetAxis("Mouse Y") * rotspeed * Time.deltaTime;
 
@@ -558,7 +563,6 @@ public class jugador : MonoBehaviour
             
             transform.Rotate(Vector3.up * rotationinput.x);
             camara.transform.localRotation = Quaternion.Euler(-cameraverticalangle,transform.eulerAngles.y,0);
-
             camara.transform.position = Vector3.MoveTowards(camara.transform.position,transform.position,7 * Time.deltaTime);
 		}
 		if (manager.juego == 10)
@@ -641,8 +645,7 @@ public class jugador : MonoBehaviour
 		{
 			jumpforce = jumpforcebase;
 
-			if(velocidad <= 10)
-			{velocidad = 10;}
+		
 		}
 	}
 
@@ -691,11 +694,7 @@ public class jugador : MonoBehaviour
 			}
 			this.ascensor = false;
 		}
-		if (col.gameObject.tag == "suelo")
-			{
-				if(velocidad > 4)
-				{velocidad = velocidadaux;}
-			}
+	
 	}
 
 	// Token: 0x0400000C RID: 12

@@ -219,7 +219,6 @@ GameObject:
   - component: {fileID: 767}
   - component: {fileID: 651}
   - component: {fileID: 637}
-  - component: {fileID: 840}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: coche2
@@ -297,7 +296,6 @@ GameObject:
   - component: {fileID: 504}
   - component: {fileID: 354}
   - component: {fileID: 769}
-  - component: {fileID: 842}
   - component: {fileID: 725}
   m_Layer: 0
   m_Name: monedav (8)
@@ -1164,7 +1162,6 @@ GameObject:
   - component: {fileID: 551}
   - component: {fileID: 401}
   - component: {fileID: 793}
-  - component: {fileID: 873}
   m_Layer: 0
   m_Name: teleport
   m_TagString: Untagged
@@ -11308,7 +11305,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.04792968, g: 0.106761836, b: 0.14616513, a: 1}
+  m_IndirectSpecularColor: {r: 0.0037152108, g: 0.010948347, b: 0.01847047, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!108 &722
 Light:
@@ -13677,18 +13674,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audio: {fileID: 0}
   velocidadmaxima: 20
---- !u!114 &840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 17}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d522f5cba38cde4459f9f97c1b116cfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13702,18 +13687,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio1: {fileID: 1585992304}
---- !u!114 &842
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 21}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8d983a8b5fd1bc4c9946fbf47ea595d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14085,18 +14058,6 @@ MonoBehaviour:
   ascensortut: {fileID: 0}
   ascensortut2: {fileID: 0}
   dentrotienda: 0
---- !u!114 &873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 76}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 251d51cb85cc0eb46a1e0d8f1ee3bed4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &875
 MonoBehaviour:
   m_ObjectHideFlags: 0
