@@ -19,6 +19,7 @@ public class jugador : MonoBehaviour
 	private float cameraverticalangle;
 	public Vector3 rotationinput;
 	public float speed = 3;
+	public bool suelo;
 	
 	
 	public void boton_m()
@@ -338,11 +339,13 @@ public class jugador : MonoBehaviour
 		{
 			base.transform.rotation = this.rotacion1;
 		}
-		if (this.tiempovelint >= 2)
+		if (this.tiempovelint > 1 && suelo == false)
 		{
-			this.tiempovel = 0f;
-			this.tiempovelint = 0;
-			this.velocidad = this.velocidadaux;
+			velocidad = velocidadaux;
+		}
+		if (this.tiempovelint > 2 && suelo == true)
+		{
+			velocidad = 10;
 		}
 		this.tiempovel += Time.deltaTime;
 		this.tiempovelint = (int)this.tiempovel;
@@ -644,6 +647,8 @@ public class jugador : MonoBehaviour
 		if (col.gameObject.tag == "suelo")
 		{
 			jumpforce = jumpforcebase;
+			if(tiempovelint > 2)
+			{suelo = true;}
 
 		
 		}
@@ -671,6 +676,12 @@ public class jugador : MonoBehaviour
 			this.ascensortut.text = "(click derecho) o (b) para subir de planta  ";
 			this.ascensor = true;
 		}
+		if (col.gameObject.tag == "suelo")
+		{
+			if(tiempovelint > 2)
+			{suelo = true;}
+		
+		}
 	}
 
 
@@ -693,6 +704,10 @@ public class jugador : MonoBehaviour
 				this.ascensortut.text = " ";
 			}
 			this.ascensor = false;
+		}
+		if (col.gameObject.tag == "suelo")
+		{
+			suelo = false;
 		}
 	
 	}
