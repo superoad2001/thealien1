@@ -97,6 +97,8 @@ public class jugador : MonoBehaviour
 		this.velocidadaux = this.velocidad;
 		girovalor = base.transform.eulerAngles.y;
 		jumpforcebase = jumpforce;
+		Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
 		
 		
 	}
