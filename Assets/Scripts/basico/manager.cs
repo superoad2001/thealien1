@@ -13,12 +13,16 @@ public class manager : MonoBehaviour
 	public AudioSource audio5;
 	public AudioSource audio6;
 	public AudioSource audio7;
+	public int plataforma;
 	// Token: 0x06000025 RID: 37 RVA: 0x0000334C File Offset: 0x0000154C
 	private void Start()
 	{
 		jugador jugador = UnityEngine.Object.FindObjectOfType<jugador>();
 		manager manager = UnityEngine.Object.FindObjectOfType<manager>();
 
+
+
+		this.plataforma = PlayerPrefs.GetInt("plataforma", 1);
 		this.tengomejora = PlayerPrefs.GetInt("tengomejora", 0);
 		this.cinematicaf = PlayerPrefs.GetInt("cinfinal", 0);
 		this.gema1 = PlayerPrefs.GetInt("gema1", 0);

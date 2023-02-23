@@ -6,13 +6,6 @@ using UnityEngine.UI;
 // Token: 0x0200000A RID: 10
 public class jugador : MonoBehaviour
 {
-	public bool botonm = false;
-	public bool botonn = false;
-	public bool botonarr = false;
-	public bool botonabj = false;
-	public bool botonizq = false;
-	public bool botonder = false;
-	public bool botonesp = false;
 	public AudioSource audio1;
 	public float rotspeed = 3;
 	public GameObject camara;
@@ -20,85 +13,42 @@ public class jugador : MonoBehaviour
 	public Vector3 rotationinput;
 	public float speed = 3;
 	public bool suelo;
-	
-	
-	public void boton_m()
-    {
-        botonm = true;
-    }
-	public void Detenerm()
-    {
-        botonm = false;
-    }
-	public void boton_n()
-    {
-        botonn = true;
-    }
-    public void Detenern()
-    {
-        botonn = false;
-    }
-
-
-
-
-		public void boton_arr()
-    {
-        botonarr = true;
-    }
-	public void Detenerarr()
-    {
-        botonarr = false;
-    }
-	public void boton_abj()
-    {
-        botonabj = true;
-    }
-    public void Detenerabj()
-    {
-        botonabj = false;
-    }
-	public void boton_izq()
-    {
-        botonizq = true;
-    }
-	public void Detenerizq()
-    {
-        botonizq = false;
-    }
-	public void boton_der()
-    {
-        botonder = true;
-    }
-    public void Detenerder()
-    {
-        botonder = false;
-    }
-
-
-
-	public void boton_esp()
-    {
-        botonesp = true;
-    }
-    public void Deteneresp()
-    {
-        botonesp = false;
-    }
 	public float girovalor;
 	private bool girotder = false;
 	private bool girotizq = false;
 	private bool girotd_der = false;
 	private bool girotd_izq = false;
+
+	public float lhorizontalc;
+	public float lverticalc;
+	public float rhorizontalc;
+	public float rverticalc;
+	public float jumpc;
+	public float mc;
+	public float nc;
+	public Joystick joyl;
+	public Joystick joyr;
+	public GameObject tactil;
 	// Token: 0x0600001D RID: 29 RVA: 0x000025E8 File Offset: 0x000007E8
 	private void Start()
 	{
+		
+
+		manager manager = UnityEngine.Object.FindObjectOfType<manager>();
+		if(manager.plataforma == 1)
+		{
+			tactil.SetActive(false);
+			Cursor.visible = false;
+        	Cursor.lockState = CursorLockMode.Locked;
+		}
+		if(manager.plataforma == 2)
+		{
+			tactil.SetActive(true);
+		}
 		this._rb = base.GetComponent<Rigidbody>();
 		this.velocidadaux = this.velocidad;
 		girovalor = base.transform.eulerAngles.y;
 		jumpforcebase = jumpforce;
-		Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
 		
 		
 	}
@@ -128,25 +78,71 @@ public class jugador : MonoBehaviour
 	public bool subir = false;
 	private bool moverdelante = true;
 	// Token: 0x0600001E RID: 30 RVA: 0x00002604 File Offset: 0x00000804
+	public void A()
+	{
+		jumpc = 1;
+	}
+	public void B()
+	{
+		mc = -1;
+	}
+	public void X()
+	{
+		nc = -1;
+	}
+	public void detA()
+	{
+		jumpc = 0;
+	}
+	public void detB()
+	{
+		mc = 0;
+	}
+	public void detX()
+	{
+		nc = 0;
+	}
+	
 	private void Update()
 	{
-		manager manager = UnityEngine.Object.FindObjectOfType<manager>();
+	manager manager = UnityEngine.Object.FindObjectOfType<manager>();
+	if(manager.plataforma == 1)
+	{
+	lhorizontalc = Input.GetAxis("Horizontal");
+	lverticalc = Input.GetAxis("Vertical");
+	rhorizontalc = Input.GetAxis("Mouse X");
+	rverticalc = Input.GetAxis("Mouse Y");
+	jumpc = Input.GetAxis("Jump");
+	mc = Input.GetAxis("m");
+	nc = Input.GetAxis("n");
+	}
+	
+	if(manager.plataforma == 2)
+	{
+	lhorizontalc = joyl.Horizontal;
+	lverticalc =  joyl.Vertical;
+	rhorizontalc =  joyr.Horizontal;
+	rverticalc =  joyr.Vertical;
+	}
+
+
+
+
 		if (this.ascensor && manager.juego == 0 && manager.piso == 1)
 		{
-			if (Input.GetAxis("m") < 0f && manager.tengovel == 1 && bajar1 == false && bajar1esp == false || botonm == true && manager.tengovel == 1 && bajar1 == false && bajar1esp == false )
+			if (mc < 0f && manager.tengovel == 1 && bajar1 == false && bajar1esp == false )
 			{
 				subir1 = true;
 				subir = true;
 				
 				
 			}
-			if (Input.GetAxis("n") < 0f && manager.tengonave == 1 && manager.cinematicaf == 1 && subir1 == false
-			|| botonn == true && manager.tengonave == 1 && manager.cinematicaf == 1 && subir1 == false)
+			if (nc < 0f && manager.tengonave == 1 && manager.cinematicaf == 1 && subir1 == false)
 			{
 				bajar1esp = true;
 				bajar = true;
 			}
-			else if (Input.GetAxis("n") < 0f && manager.gemas >= 1 && subir1 == false || botonn == true && manager.gemas >= 1 && subir1 == false)
+			else if (nc < 0f && manager.gemas >= 1 && subir1 == false )
 			{
 				bajar1 = true;
 				bajar = true;
@@ -166,8 +162,7 @@ public class jugador : MonoBehaviour
 			
 			
 		}
-		if (this.ascensor && manager.juego == 4 && manager.piso == 10 && Input.GetAxis("m") < 0f
-		||this.ascensor && manager.juego == 4 && manager.piso == 10 && botonm == true && subir0 == false)
+		if (this.ascensor && manager.juego == 4 && manager.piso == 10 && mc < 0f)
 		{
 			subir0 = true;
 			subir = true;
@@ -176,13 +171,13 @@ public class jugador : MonoBehaviour
 		if (subir0 == true){this.tiempoascensor += Time.deltaTime; base.transform.Translate(Vector3.up * 4f * Time.deltaTime);}
 		if (this.ascensor && manager.juego == 0 && manager.piso == 2)
 		{
-			if (Input.GetAxis("m") < 0f && manager.tengocoche == 1 && bajar2 == false || botonm == true && manager.tengocoche == 1 && bajar2 == false)
+			if (mc < 0f && manager.tengocoche == 1 && bajar2 == false)
 			{
 				subir2 = true;
 				subir = true;
 				
 			}
-			if (Input.GetAxis("n") < 0f && subir2 == false || botonn == true && subir2 == false)
+			if (nc < 0f && subir2 == false)
 			{
 				bajar2 = true;
 				bajar = true;
@@ -195,12 +190,12 @@ public class jugador : MonoBehaviour
 		}
 		if (this.ascensor && manager.juego == 0 && manager.piso == 3)
 		{
-			if (Input.GetAxis("m") < 0f && manager.tengosalto == 1 && bajar3 == false || botonm == true && manager.tengosalto == 1 && bajar3 == false)
+			if (mc < 0f && manager.tengosalto == 1 && bajar3 == false )
 			{
 				subir3 = true;
 				subir = true;
 			}
-			if (Input.GetAxis("n") < 0f && subir3 == false || botonn == true && subir3 == false)
+			if (nc < 0f && subir3 == false )
 			{
 				bajar3 = true;
 				bajar = true;
@@ -210,14 +205,12 @@ public class jugador : MonoBehaviour
 			if(subir3 == true && tiempoascensor > 3){SceneManager.LoadScene("piso4");}
 			if(bajar3 == true && tiempoascensor > 3){SceneManager.LoadScene("piso2");}
 		}
-		if (this.ascensor && manager.juego == 0 && manager.piso == 5 && Input.GetAxis("n") < 0f && subir5 == false
-		||this.ascensor && manager.juego == 0 && manager.piso == 5 && botonn == true && subir5 == false)
+		if (this.ascensor && manager.juego == 0 && manager.piso == 5 && nc < 0f && subir5 == false)
 		{
 				bajar5 = true;
 				bajar = true;
 		}
-				if (this.ascensor && manager.juego == 0 && manager.piso == 5 && Input.GetAxis("m") < 0f && bajar5 == false
-		||this.ascensor && manager.juego == 0 && manager.piso == 5 && botonm == true && bajar5 == false)
+				if (this.ascensor && manager.juego == 0 && manager.piso == 5 && mc < 0f && bajar5 == false)
 		{
 				subir5 = true;
 				subir = true;
@@ -228,14 +221,13 @@ public class jugador : MonoBehaviour
 		if (subir5 == true){this.tiempoascensor += Time.deltaTime; base.transform.Translate(Vector3.up * 5f * Time.deltaTime);}
 		if (this.ascensor && manager.juego == 0 && manager.piso == 4)
 		{
-			if (Input.GetAxis("m") < 0f && manager.fragmento == 3 && manager.tengollave4 == 1 && bajar4 == false
-			|| botonm == true && manager.fragmento == 3 && manager.tengollave4 == 1 && bajar4 == false )
+			if (mc < 0f && manager.fragmento == 3 && manager.tengollave4 == 1 && bajar4 == false)
 			{
 				subir4 = true;
 				subir = true;
 				
 			}
-			if (Input.GetAxis("n") < 0f && subir4 == false || botonn == true && subir4 == false) 
+			if (nc < 0f && subir4 == false ) 
 			{
 				bajar4 = true;
 				bajar = true;
@@ -248,14 +240,13 @@ public class jugador : MonoBehaviour
 		}
 			if (this.ascensor && manager.juego == 0 && manager.piso == -1)
 		{
-			if (Input.GetAxis("m") < 0f && bajart1 == false
-			|| botonm == true && bajart1 == false )
+			if (mc < 0f && bajart1 == false )
 			{
 				subirt1 = true;
 				subir = true;
 				
 			}
-			if (Input.GetAxis("n") < 0f && subirt1 == false || botonn == true && subirt1 == false) 
+			if (nc < 0f && subirt1 == false) 
 			{
 				bajart1 = true;
 				bajar = true;
@@ -268,14 +259,13 @@ public class jugador : MonoBehaviour
 		}
 			if (this.ascensor && manager.juego == 0 && manager.piso == -2)
 		{
-			if (Input.GetAxis("m") < 0f && bajart2 == false
-			|| botonm == true && bajart2 == false )
+			if (mc < 0f && bajart2 == false)
 			{
 				subirt2= true;
 				subir = true;
 				
 			}
-			if (Input.GetAxis("n") < 0f && subirt2 == false || botonn == true && subirt2 == false) 
+			if (nc < 0f && subirt2 == false) 
 			{
 				bajart2 = true;
 				bajar = true;
@@ -288,14 +278,13 @@ public class jugador : MonoBehaviour
 		}
 			if (this.ascensor && manager.juego == 0 && manager.piso == -3)
 		{
-			if (Input.GetAxis("m") < 0f && bajart3 == false
-			|| botonm == true && bajart3 == false )
+			if (mc < 0f && bajart3 == false)
 			{
 				subirt3 = true;
 				subir = true;
 				
 			}
-			if (Input.GetAxis("n") < 0f && subirt3 == false || botonn == true && subirt3 == false) 
+			if (nc < 0f && subirt3 == false ) 
 			{
 				bajart3 = true;
 				bajar = true;
@@ -308,14 +297,13 @@ public class jugador : MonoBehaviour
 		}
 		if (this.ascensor && manager.juego == 0 && manager.piso == -4)
 		{
-			if (Input.GetAxis("m") < 0f && bajart4 == false
-			|| botonm == true && bajart4 == false )
+			if (mc < 0f && bajart4 == false )
 			{
 				subirt4 = true;
 				subir = true;
 				
 			}
-			if (Input.GetAxis("n") < 0f && subirt4 == false || botonn == true && subirt4 == false) 
+			if (nc < 0f && subirt4 == false ) 
 			{
 				bajart4 = true;
 				bajar = true;
@@ -328,7 +316,7 @@ public class jugador : MonoBehaviour
 		}
 			if (this.ascensor && manager.juego == -1 && manager.piso == -5)
 		{
-			if (Input.GetAxis("n") < 0f || botonn == true) 
+			if (nc < 0f ) 
 			{
 				bajart5 = true;
 				bajar = true;
@@ -353,19 +341,19 @@ public class jugador : MonoBehaviour
 		this.tiempovelint = (int)this.tiempovel;
 		if (manager.juego == 2)
 		{
-			if (Input.GetAxis("Horizontal") > 0f || botonder == true)
+			if (lhorizontalc > 0f )
 			{
 				base.transform.position -= +1 * (float)this.velocidadjet * Time.deltaTime * Vector3.left;
 			}
-			if (Input.GetAxis("Horizontal") < 0f|| botonizq == true)
+			if (lhorizontalc < 0f)
 			{
 				base.transform.position -= -1 * (float)this.velocidadjet * Time.deltaTime * Vector3.left;
 			}
-			if (Input.GetAxis("Vertical") > 0f || botonarr == true)
+			if (lverticalc > 0f )
 			{
 				base.transform.position -= +1 * (float)this.velocidadjet * Time.deltaTime * Vector3.down;
 			}
-			if (Input.GetAxis("Vertical") < 0f || botonabj == true)
+			if (lverticalc < 0f )
 			{
 				base.transform.position -= -1 * (float)this.velocidadjet * Time.deltaTime * Vector3.down;
 			}
@@ -373,53 +361,53 @@ public class jugador : MonoBehaviour
 		}
 		if (manager.juego == 6)
 		{
-			if (Input.GetAxis("Horizontal") > 0f || botonder == true)  
+			if (lhorizontalc > 0f )  
 			{
 				base.transform.Rotate(Vector3.up, Time.deltaTime * 50f);
 			}
-			if (Input.GetAxis("Horizontal") < 0f || botonizq == true)
+			if (lhorizontalc < 0f )
 			{
 				base.transform.Rotate(Vector3.down, Time.deltaTime * 50f);
 			}
-			if (Input.GetAxis("Vertical") > 0f || botonarr == true)
+			if (lverticalc > 0f )
 			{
 				base.transform.Rotate(Vector3.right, Time.deltaTime * 50f);
 			}
-			if (Input.GetAxis("Vertical") < 0f || botonabj == true)
+			if (lverticalc < 0f )
 			{
 				base.transform.Rotate(Vector3.left, Time.deltaTime * 50f);
 			}
-			if (Input.GetAxis("Jump") > 0f || botonesp == true)
+			if (jumpc > 0f )
 			{
 				base.transform.Translate(-Vector3.back * (float)this.velocidad * Time.deltaTime);
 			}
 
-			rotationinput.x = Input.GetAxis("Mouse X") * rotspeed * Time.deltaTime;
-            rotationinput.y = Input.GetAxis("Mouse Y") * rotspeed * Time.deltaTime;
+			rotationinput.x = rhorizontalc * rotspeed * Time.deltaTime;
+            rotationinput.y = rverticalc * rotspeed * Time.deltaTime;
             
             transform.Rotate(Vector3.up * rotationinput.x);
 			transform.Rotate(Vector3.left * rotationinput.y);
 		}
 		if (manager.juego == 1)
 		{
-			if (Input.GetAxis("Jump") > 0f || botonesp == true)
+			if (jumpc > 0f )
 			{
 				base.transform.position -= (float)this.velocidad * Time.deltaTime * Vector3.back;
 			}
-			if (Input.GetAxis("m") < 0f || botonm == true)
+			if (mc < 0f )
 			{
 				base.transform.position -= (float)this.velocidad * Time.deltaTime * Vector3.forward;
 			}
-			if (Input.GetAxis("Horizontal") > 0f || botonder == true)
+			if (lhorizontalc > 0f )
 			{
 				base.transform.position -= +1 * (float)this.velocidad * Time.deltaTime * Vector3.left;
 			}
-			if (Input.GetAxis("Horizontal") < 0f|| botonizq == true)
+			if (lhorizontalc < 0f)
 			{
 				base.transform.position -= -1 * (float)this.velocidad * Time.deltaTime * Vector3.left;
 			}
 		}
-		if (manager.juego == 3 && Input.GetAxis("m") < 0f || manager.juego == 3 && botonm == true)
+		if (manager.juego == 3 && mc < 0f )
 		{
 			if (!this.dimensiion && this.tiempogiro2 > 1.5f)
 			{
@@ -478,11 +466,11 @@ public class jugador : MonoBehaviour
 		if (manager.juego == 3 && this.dimensiion)
 		{
 			
-			if (Input.GetAxis("Horizontal") > 0f || botonder == true)
+			if (lhorizontalc > 0f )
 			{
 				base.transform.position -= +1 * (float)this.velocidad * Time.deltaTime * Vector3.back;
 			}
-			if (Input.GetAxis("Horizontal") < 0f || botonizq == true)
+			if (lhorizontalc < 0f )
 			{
 				base.transform.position -= -1 * (float)this.velocidad * Time.deltaTime * Vector3.back;
 			}
@@ -495,11 +483,11 @@ public class jugador : MonoBehaviour
 		}
 		if (manager.juego == 3 && !this.dimensiion)
 		{
-			if (Input.GetAxis("Horizontal") < 0f || botonizq == true)
+			if (lhorizontalc < 0f )
 			{
 				base.transform.position -= -1 * (float)this.velocidad * Time.deltaTime * Vector3.right;
 			}
-			if (Input.GetAxis("Horizontal") > 0f || botonder == true)
+			if (lhorizontalc > 0f)
 			{
 				base.transform.position -= +1 * (float)this.velocidad * Time.deltaTime * Vector3.right;
 			}
@@ -509,26 +497,26 @@ public class jugador : MonoBehaviour
 		{
 			if(subir == false && bajar == false)
 			{
-				if (Input.GetAxis("Horizontal") > 0f )
+				if (lhorizontalc > 0f )
 				{
 					base.transform.Translate (-1 * Time.deltaTime * Vector3.left* velocidad);
 				}
-				if (Input.GetAxis("Horizontal") < 0f)
+				if (lhorizontalc < 0f)
 				{
 					base.transform.Translate (1 * Time.deltaTime * Vector3.left* velocidad);
 				}
-				if (Input.GetAxis("Vertical") > 0f)
+				if (lverticalc > 0f)
 				{
 					base.transform.Translate  (-1 * Time.deltaTime * Vector3.back * velocidad);
 				}
-				if (Input.GetAxis("Vertical") < 0f )
+				if (lverticalc < 0f )
 				{
 					base.transform.Translate (1  * Time.deltaTime * Vector3.back* velocidad);
 				}
 			}
 
-			rotationinput.x = Input.GetAxis("Mouse X") * rotspeed * Time.deltaTime;
-            rotationinput.y = Input.GetAxis("Mouse Y") * rotspeed * Time.deltaTime;
+			rotationinput.x = rhorizontalc * rotspeed * Time.deltaTime;
+            rotationinput.y = rverticalc * rotspeed * Time.deltaTime;
 
             cameraverticalangle +=  rotationinput.y;
             cameraverticalangle = Mathf.Clamp(cameraverticalangle, -50 , 20);
@@ -540,19 +528,19 @@ public class jugador : MonoBehaviour
 		}
 		if (manager.juego == 0 && subir == false && bajar == false )
 		{
-			if (Input.GetAxis("Horizontal") > 0f )
+			if (lhorizontalc > 0f )
 			{
 				base.transform.Translate (-1 * Time.deltaTime * Vector3.left* velocidad);
 			}
-			if (Input.GetAxis("Horizontal") < 0f)
+			if (lhorizontalc < 0f)
 			{
 				base.transform.Translate (1 * Time.deltaTime * Vector3.left* velocidad);
 			}
-			if (Input.GetAxis("Vertical") > 0f)
+			if (lverticalc > 0f)
 			{
 				base.transform.Translate  (-1 * Time.deltaTime * Vector3.back * velocidad);
 			}
-			if (Input.GetAxis("Vertical") < 0f )
+			if (lverticalc < 0f )
 			{
 				base.transform.Translate (1  * Time.deltaTime * Vector3.back* velocidad);
 			}
@@ -560,8 +548,8 @@ public class jugador : MonoBehaviour
 		}
 		if (manager.juego == 0 )
 		{
-			rotationinput.x = Input.GetAxis("Mouse X") * rotspeed * Time.deltaTime;
-            rotationinput.y = Input.GetAxis("Mouse Y") * rotspeed * Time.deltaTime;
+			rotationinput.x = rhorizontalc * rotspeed * Time.deltaTime;
+            rotationinput.y = rverticalc * rotspeed * Time.deltaTime;
 
             cameraverticalangle +=  rotationinput.y;
             cameraverticalangle = Mathf.Clamp(cameraverticalangle, -50 , 20);
@@ -572,19 +560,19 @@ public class jugador : MonoBehaviour
 		}
 		if (manager.juego == 10)
 		{
-			if (Input.GetAxis("Horizontal") < 0f || botonizq == true)
+			if (lhorizontalc < 0f )
 			{
 				base.transform.Rotate(Vector3.down, Time.deltaTime * 50f);
 			}
-			if (Input.GetAxis("Horizontal") > 0f|| botonder == true)
+			if (lhorizontalc > 0f)
 			{
 				base.transform.Rotate(Vector3.up, Time.deltaTime * 50f);
 			}
-			if (Input.GetAxis("Vertical") > 0f|| botonarr == true)
+			if (lverticalc > 0f)
 			{
 				base.transform.Translate(-Vector3.back * 10f * Time.deltaTime);
 			}
-			if (Input.GetAxis("Vertical") < 0f || botonabj == true)
+			if (lverticalc < 0f )
 			{
 				base.transform.Translate(-Vector3.forward * 10f * Time.deltaTime);
 			}
@@ -592,7 +580,7 @@ public class jugador : MonoBehaviour
 		if (manager.juego == 3)
 		{
 			this.tiemposalto -= Time.deltaTime;
-			if (this.tiemposalto <= 0f && Input.GetAxis("Jump") > 0f || this.tiemposalto <= 0f && botonesp == true)
+			if (this.tiemposalto <= 0f && jumpc > 0f )
 			{
 					this._rb.AddForce(this.jumpforce * Vector3.up);
 					this.tiemposalto = 0.9f;
@@ -602,7 +590,7 @@ public class jugador : MonoBehaviour
 		if (manager.juego == 4)
 		{
 			this.tiemposalto -= Time.deltaTime;
-			if (this.tiemposalto <= 0f && Input.GetAxis("Jump") > 0f || this.tiemposalto <= 0f && botonesp == true)
+			if (this.tiemposalto <= 0f && jumpc > 0f )
 			{
 					this._rb.AddForce(this.jumpforce * Vector3.up);
 					this.tiemposalto = 0.9f;
@@ -624,7 +612,7 @@ public class jugador : MonoBehaviour
 	public void saltoalto()
 	{
 		manager manager = UnityEngine.Object.FindObjectOfType<manager>();
-		if (Input.GetAxis("Jump") > 0f || botonesp == true){
+		if (jumpc > 0f ){
 		this._rb.AddForce(this.jumpforce * 0.2f * Vector3.up);}
 		audio1 = manager.GetComponent<AudioSource>();
 		audio1.Play();
@@ -632,7 +620,7 @@ public class jugador : MonoBehaviour
     public void saltoalto2()
 	{
 		manager manager = UnityEngine.Object.FindObjectOfType<manager>();
-		if (Input.GetAxis("Jump") > 0f || botonesp == true){
+		if (jumpc > 0f){
 		this._rb.AddForce(this.jumpforce * 1f * Vector3.up);}
 		audio1 = manager.GetComponent<AudioSource>();
 		audio1.Play();
