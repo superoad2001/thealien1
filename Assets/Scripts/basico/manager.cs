@@ -15,6 +15,11 @@ public class manager : MonoBehaviour
 	public AudioSource audio7;
 	public int plataforma;
 	// Token: 0x06000025 RID: 37 RVA: 0x0000334C File Offset: 0x0000154C
+	private void Awake() {
+	{
+		this.plataforma = PlayerPrefs.GetInt("plataforma", 1);
+	}
+	}
 	private void Start()
 	{
 		jugador jugador = UnityEngine.Object.FindObjectOfType<jugador>();
@@ -22,7 +27,6 @@ public class manager : MonoBehaviour
 
 
 
-		this.plataforma = PlayerPrefs.GetInt("plataforma", 1);
 		this.tengomejora = PlayerPrefs.GetInt("tengomejora", 0);
 		this.cinematicaf = PlayerPrefs.GetInt("cinfinal", 0);
 		this.gema1 = PlayerPrefs.GetInt("gema1", 0);
