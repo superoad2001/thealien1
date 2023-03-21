@@ -335,7 +335,7 @@ public class jugador : MonoBehaviour
 		}
 		if (this.tiempovelint > 2 && suelo == true)
 		{
-			velocidad = 10;
+			velocidad = 7;
 		}
 		this.tiempovel += Time.deltaTime;
 		this.tiempovelint = (int)this.tiempovel;
