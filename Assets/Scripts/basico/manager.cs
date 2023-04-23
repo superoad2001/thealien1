@@ -138,10 +138,6 @@ public class manager : MonoBehaviour
 		{
 			audio6.Play();
 		}
-		if (tengomejora == 1)
-		{
-			audio7.Play();
-		}
 	}
 	public bool mundos = false;
 		// Token: 0x04000021 RID: 33

@@ -18,7 +18,7 @@ public class jugador : MonoBehaviour
 	private bool girotizq = false;
 	private bool girotd_der = false;
 	private bool girotd_izq = false;
-
+	public GameObject mod;
 	public float lhorizontalc;
 	public float lverticalc;
 	public float rhorizontalc;
@@ -29,10 +29,10 @@ public class jugador : MonoBehaviour
 	public Joystick joyl;
 	public Joystick joyr;
 	public GameObject tactil;
+	public Animator anim;
 	// Token: 0x0600001D RID: 29 RVA: 0x000025E8 File Offset: 0x000007E8
 	private void Start()
 	{
-		
 
 		manager manager = UnityEngine.Object.FindObjectOfType<manager>();
 		if(manager.plataforma == 1)
@@ -52,7 +52,7 @@ public class jugador : MonoBehaviour
 		
 		
 	}
-	private float tiempoascensor = 0;
+	public float tiempoascensor = 0;
 	private bool subir0 = false;
 	private bool bajar1 = false;
 	private bool subir1 = false;
@@ -105,6 +105,7 @@ public class jugador : MonoBehaviour
 	
 	private void Update()
 	{
+	tiempoascensor += Time.deltaTime;
 	manager manager = UnityEngine.Object.FindObjectOfType<manager>();
 	if(manager.plataforma == 1)
 	{
@@ -134,6 +135,7 @@ public class jugador : MonoBehaviour
 			{
 				subir1 = true;
 				subir = true;
+				tiempoascensor = 0;
 				
 				
 			}
@@ -141,24 +143,19 @@ public class jugador : MonoBehaviour
 			{
 				bajar1esp = true;
 				bajar = true;
+				tiempoascensor = 0;
 			}
 			else if (nc < 0f && manager.gemas >= 1 && subir1 == false )
 			{
 				bajar1 = true;
 				bajar = true;
+				tiempoascensor = 0;
 				
 			}
 			if (bajar1 == true){this.tiempoascensor += Time.deltaTime; subir1 = false; base.transform.Translate(Vector3.up * -4f * Time.deltaTime);}
 			if (subir1 == true){this.tiempoascensor += Time.deltaTime; bajar1 = false; base.transform.Translate(Vector3.up * 4f * Time.deltaTime);}
 			if (bajar1esp == true){this.tiempoascensor += Time.deltaTime; subir1 = false; base.transform.Translate(Vector3.up * -4f * Time.deltaTime);}
-			if(subir1 == true && tiempoascensor > 3){SceneManager.LoadScene("piso2");}
-			if(bajar1esp == true && tiempoascensor > 3)
-			{
-				manager.cinematicaf = 0;
-				PlayerPrefs.SetInt("cinfinal", manager.cinematicaf);
-				SceneManager.LoadScene("cinematicafinal");
-			}
-			if(bajar1 == true && tiempoascensor > 3){SceneManager.LoadScene("mundo");}
+			
 			
 			
 		}
@@ -166,8 +163,9 @@ public class jugador : MonoBehaviour
 		{
 			subir0 = true;
 			subir = true;
+			tiempoascensor = 0;
 		}
-		if(subir0 == true && tiempoascensor > 3){SceneManager.LoadScene("piso1");}
+		
 		if (subir0 == true){this.tiempoascensor += Time.deltaTime; base.transform.Translate(Vector3.up * 4f * Time.deltaTime);}
 		if (this.ascensor && manager.juego == 0 && manager.piso == 2)
 		{
@@ -175,18 +173,19 @@ public class jugador : MonoBehaviour
 			{
 				subir2 = true;
 				subir = true;
+				tiempoascensor = 0;
 				
 			}
 			if (nc < 0f && subir2 == false)
 			{
 				bajar2 = true;
 				bajar = true;
+				tiempoascensor = 0;
 				
 			}
 			if (bajar2 == true){this.tiempoascensor += Time.deltaTime; subir2 = false; base.transform.Translate(Vector3.up * -4f * Time.deltaTime);}
 			if (subir2 == true){this.tiempoascensor += Time.deltaTime; bajar2 = false; base.transform.Translate(Vector3.up * 4f * Time.deltaTime);}
-			if(subir2 == true && tiempoascensor > 3){SceneManager.LoadScene("piso3");}
-			if(bajar2 == true && tiempoascensor > 3){SceneManager.LoadScene("piso1");}
+			
 		}
 		if (this.ascensor && manager.juego == 0 && manager.piso == 3)
 		{
@@ -194,30 +193,33 @@ public class jugador : MonoBehaviour
 			{
 				subir3 = true;
 				subir = true;
+				tiempoascensor = 0;
 			}
 			if (nc < 0f && subir3 == false )
 			{
 				bajar3 = true;
 				bajar = true;
+				tiempoascensor = 0;
 			}
 			if (bajar3 == true){this.tiempoascensor += Time.deltaTime; subir3 = false; base.transform.Translate(Vector3.up * -4f * Time.deltaTime);}
 			if (subir3 == true){this.tiempoascensor += Time.deltaTime; bajar3 = false; base.transform.Translate(Vector3.up * 4f * Time.deltaTime);}
-			if(subir3 == true && tiempoascensor > 3){SceneManager.LoadScene("piso4");}
-			if(bajar3 == true && tiempoascensor > 3){SceneManager.LoadScene("piso2");}
+			
 		}
 		if (this.ascensor && manager.juego == 0 && manager.piso == 5 && nc < 0f && subir5 == false)
 		{
 				bajar5 = true;
 				bajar = true;
+				tiempoascensor = 0;
 		}
 				if (this.ascensor && manager.juego == 0 && manager.piso == 5 && mc < 0f && bajar5 == false)
 		{
 				subir5 = true;
 				subir = true;
+				tiempoascensor = 0;
 		}
-		if(bajar5 == true && tiempoascensor > 3){SceneManager.LoadScene("piso4");}
+
 		if (bajar5 == true){this.tiempoascensor += Time.deltaTime; base.transform.Translate(Vector3.up * -4f * Time.deltaTime);}
-		if(subir5 == true && tiempoascensor > 7){SceneManager.LoadScene("piso1t");}
+
 		if (subir5 == true){this.tiempoascensor += Time.deltaTime; base.transform.Translate(Vector3.up * 5f * Time.deltaTime);}
 		if (this.ascensor && manager.juego == 0 && manager.piso == 4)
 		{
@@ -225,18 +227,19 @@ public class jugador : MonoBehaviour
 			{
 				subir4 = true;
 				subir = true;
+				tiempoascensor = 0;
 				
 			}
 			if (nc < 0f && subir4 == false ) 
 			{
 				bajar4 = true;
 				bajar = true;
+				tiempoascensor = 0;
 				
 			}
 			if (bajar4 == true){this.tiempoascensor += Time.deltaTime; subir4 = false; base.transform.Translate(Vector3.up * -4f * Time.deltaTime);}
 			if (subir4 == true){this.tiempoascensor += Time.deltaTime; bajar4 = false; base.transform.Translate(Vector3.up * 4f * Time.deltaTime);}
-			if(subir4 == true && tiempoascensor > 3){SceneManager.LoadScene("piso5");}
-			if(bajar4 == true && tiempoascensor > 3){SceneManager.LoadScene("piso3");}
+			
 		}
 			if (this.ascensor && manager.juego == 0 && manager.piso == -1)
 		{
@@ -244,18 +247,19 @@ public class jugador : MonoBehaviour
 			{
 				subirt1 = true;
 				subir = true;
+				tiempoascensor = 0;
 				
 			}
 			if (nc < 0f && subirt1 == false) 
 			{
 				bajart1 = true;
 				bajar = true;
+				tiempoascensor = 0;
 				
 			}
 			if (bajart1 == true){this.tiempoascensor += Time.deltaTime; base.transform.Translate(Vector3.up * -4f * Time.deltaTime);}
 			if (subirt1 == true){this.tiempoascensor += Time.deltaTime; base.transform.Translate(Vector3.up * 4f * Time.deltaTime);}
-			if(subirt1 == true && tiempoascensor > 3){SceneManager.LoadScene("piso2t");}
-			if(bajart1 == true && tiempoascensor > 3){SceneManager.LoadScene("piso5");}
+			
 		}
 			if (this.ascensor && manager.juego == 0 && manager.piso == -2)
 		{
@@ -263,18 +267,19 @@ public class jugador : MonoBehaviour
 			{
 				subirt2= true;
 				subir = true;
+				tiempoascensor = 0;
 				
 			}
 			if (nc < 0f && subirt2 == false) 
 			{
 				bajart2 = true;
 				bajar = true;
+				tiempoascensor = 0;
 				
 			}
 			if (bajart2 == true){this.tiempoascensor += Time.deltaTime; base.transform.Translate(Vector3.up * -4f * Time.deltaTime);}
 			if (subirt2 == true){this.tiempoascensor += Time.deltaTime; base.transform.Translate(Vector3.up * 4f * Time.deltaTime);}
-			if(subirt2 == true && tiempoascensor > 3){SceneManager.LoadScene("piso3t");}
-			if(bajart2 == true && tiempoascensor > 3){SceneManager.LoadScene("piso1t");}
+
 		}
 			if (this.ascensor && manager.juego == 0 && manager.piso == -3)
 		{
@@ -282,37 +287,41 @@ public class jugador : MonoBehaviour
 			{
 				subirt3 = true;
 				subir = true;
+				tiempoascensor = 0;
 				
 			}
 			if (nc < 0f && subirt3 == false ) 
 			{
 				bajart3 = true;
 				bajar = true;
+				tiempoascensor = 0;
 				
 			}
 			if (bajart3 == true){this.tiempoascensor += Time.deltaTime; base.transform.Translate(Vector3.up * -4f * Time.deltaTime);}
 			if (subirt3 == true){this.tiempoascensor += Time.deltaTime; base.transform.Translate(Vector3.up * 4f * Time.deltaTime);}
-			if(subirt3 == true && tiempoascensor > 3){SceneManager.LoadScene("piso4t");}
-			if(bajart3 == true && tiempoascensor > 3){SceneManager.LoadScene("piso2t");}
+
 		}
 		if (this.ascensor && manager.juego == 0 && manager.piso == -4)
 		{
+			anim.SetFloat("velx",lhorizontalc);
+        anim.SetFloat("vely",lverticalc);
 			if (mc < 0f && bajart4 == false )
 			{
 				subirt4 = true;
 				subir = true;
+				tiempoascensor = 0;
 				
 			}
 			if (nc < 0f && subirt4 == false ) 
 			{
 				bajart4 = true;
 				bajar = true;
+				tiempoascensor = 0;
 				
 			}
 			if (bajart4 == true){this.tiempoascensor += Time.deltaTime; base.transform.Translate(Vector3.up * -4f * Time.deltaTime);}
 			if (subirt4 == true){this.tiempoascensor += Time.deltaTime; base.transform.Translate(Vector3.up * 4f * Time.deltaTime);}
-			if(subirt4 == true && tiempoascensor > 3){SceneManager.LoadScene("piso5t");}
-			if(bajart4 == true && tiempoascensor > 3){SceneManager.LoadScene("piso3t");}
+
 		}
 			if (this.ascensor && manager.juego == -1 && manager.piso == -5)
 		{
@@ -320,10 +329,10 @@ public class jugador : MonoBehaviour
 			{
 				bajart5 = true;
 				bajar = true;
+				tiempoascensor = 0;
 				
 			}
 			if (bajart5 == true){this.tiempoascensor += Time.deltaTime; base.transform.Translate(Vector3.up * -4f * Time.deltaTime);}
-			if(bajart5 == true && tiempoascensor > 3){SceneManager.LoadScene("piso4t");}
 		}
 		if (manager.juego == 1)
 		{
@@ -339,6 +348,37 @@ public class jugador : MonoBehaviour
 		}
 		this.tiempovel += Time.deltaTime;
 		this.tiempovelint = (int)this.tiempovel;
+			if(subir1 == true && tiempoascensor > 3){SceneManager.LoadScene("piso2");}
+			if(bajar1esp == true && tiempoascensor > 3)
+			{
+				manager.cinematicaf = 0;
+				PlayerPrefs.SetInt("cinfinal", manager.cinematicaf);
+				SceneManager.LoadScene("cinematicafinal");
+			}
+		if(bajar1 == true && tiempoascensor > 3){SceneManager.LoadScene("mundo");}
+		if(subir0 == true && tiempoascensor > 3){SceneManager.LoadScene("piso1");}
+		if(subir2 == true && tiempoascensor > 3){SceneManager.LoadScene("piso3");}
+		if(bajar2 == true && tiempoascensor > 3){SceneManager.LoadScene("piso1");}
+		if(subir3 == true && tiempoascensor > 3){SceneManager.LoadScene("piso4");}
+		if(bajar3 == true && tiempoascensor > 3){SceneManager.LoadScene("piso2");}
+		if(bajar5 == true && tiempoascensor > 3){SceneManager.LoadScene("piso4");}
+		if(subir5 == true && tiempoascensor > 7){SceneManager.LoadScene("piso1t");}
+		if(subir4 == true && tiempoascensor > 3){SceneManager.LoadScene("piso5");}
+		if(bajar4 == true && tiempoascensor > 3){SceneManager.LoadScene("piso3");}
+		if(subirt1 == true && tiempoascensor > 3){SceneManager.LoadScene("piso2t");}
+		if(bajart1 == true && tiempoascensor > 3){SceneManager.LoadScene("piso5");}
+		if(subirt2 == true && tiempoascensor > 3){SceneManager.LoadScene("piso3t");}
+		if(bajart2 == true && tiempoascensor > 3){SceneManager.LoadScene("piso1t");}
+		if(subirt3 == true && tiempoascensor > 3){SceneManager.LoadScene("piso4t");}
+		if(bajart3 == true && tiempoascensor > 3){SceneManager.LoadScene("piso2t");}
+		if(subirt4 == true && tiempoascensor > 3){SceneManager.LoadScene("piso5t");}
+		if(bajart4 == true && tiempoascensor > 3){SceneManager.LoadScene("piso3t");}
+		if(bajart5 == true && tiempoascensor > 3){SceneManager.LoadScene("piso4t");}
+
+
+
+
+
 		if (manager.juego == 2)
 		{
 			if (lhorizontalc > 0f )
@@ -409,6 +449,7 @@ public class jugador : MonoBehaviour
 		}
 		if (manager.juego == 3 && mc < 0f )
 		{
+			
 			if (!this.dimensiion && this.tiempogiro2 > 1.5f)
 			{
 				this.dimensiion = true;
@@ -465,14 +506,18 @@ public class jugador : MonoBehaviour
 
 		if (manager.juego == 3 && this.dimensiion)
 		{
+			anim.SetFloat("velx",lhorizontalc);
+        anim.SetFloat("vely",lverticalc);
 			
 			if (lhorizontalc > 0f )
 			{
 				base.transform.position -= +1 * (float)this.velocidad * Time.deltaTime * Vector3.back;
+				mod.transform.localRotation = Quaternion.Lerp(mod.transform.localRotation,Quaternion.Euler(0,-90,0),5* Time.deltaTime);
 			}
 			if (lhorizontalc < 0f )
 			{
 				base.transform.position -= -1 * (float)this.velocidad * Time.deltaTime * Vector3.back;
+				mod.transform.localRotation = Quaternion.Lerp(mod.transform.localRotation,Quaternion.Euler(0,90,0),5* Time.deltaTime);
 			}
 			this.tiempogiro2 += Time.deltaTime;
 		
@@ -483,36 +528,48 @@ public class jugador : MonoBehaviour
 		}
 		if (manager.juego == 3 && !this.dimensiion)
 		{
+			anim.SetFloat("velx",lhorizontalc);
+        anim.SetFloat("vely",lverticalc);
 			if (lhorizontalc < 0f )
 			{
 				base.transform.position -= -1 * (float)this.velocidad * Time.deltaTime * Vector3.right;
+				mod.transform.localRotation = Quaternion.Lerp(mod.transform.localRotation,Quaternion.Euler(0,90,0),5* Time.deltaTime);
 			}
 			if (lhorizontalc > 0f)
 			{
 				base.transform.position -= +1 * (float)this.velocidad * Time.deltaTime * Vector3.right;
+				mod.transform.localRotation = Quaternion.Lerp(mod.transform.localRotation,Quaternion.Euler(0,-90,0),5* Time.deltaTime);
 			}
 			this.tiempogiro2 += Time.deltaTime;
 		}
 		if (manager.juego == 4)
 		{
+			
 			if(subir == false && bajar == false)
 			{
+				anim.SetFloat("velx",lhorizontalc);
+        		anim.SetFloat("vely",lverticalc);
 				if (lhorizontalc > 0f )
 				{
 					base.transform.Translate (-1 * Time.deltaTime * Vector3.left* velocidad);
+					mod.transform.localRotation = Quaternion.Lerp(mod.transform.localRotation,Quaternion.Euler(0,90,0),5* Time.deltaTime);
 				}
 				if (lhorizontalc < 0f)
 				{
 					base.transform.Translate (1 * Time.deltaTime * Vector3.left* velocidad);
+					mod.transform.localRotation = Quaternion.Lerp(mod.transform.localRotation,Quaternion.Euler(0,-90,0),5* Time.deltaTime);
 				}
 				if (lverticalc > 0f)
 				{
 					base.transform.Translate  (-1 * Time.deltaTime * Vector3.back * velocidad);
+					mod.transform.localRotation = Quaternion.Lerp(mod.transform.localRotation,Quaternion.Euler(0,0,0),5* Time.deltaTime);
 				}
 				if (lverticalc < 0f )
 				{
 					base.transform.Translate (1  * Time.deltaTime * Vector3.back* velocidad);
+					mod.transform.localRotation = Quaternion.Lerp(mod.transform.localRotation,Quaternion.Euler(0,180,0),5* Time.deltaTime);
 				}
+
 			}
 
 			rotationinput.x = rhorizontalc * rotspeed * Time.deltaTime;
@@ -528,21 +585,27 @@ public class jugador : MonoBehaviour
 		}
 		if (manager.juego == 0 && subir == false && bajar == false )
 		{
+			anim.SetFloat("velx",lhorizontalc);
+        	anim.SetFloat("vely",lverticalc);
 			if (lhorizontalc > 0f )
 			{
 				base.transform.Translate (-1 * Time.deltaTime * Vector3.left* velocidad);
+				mod.transform.localRotation = Quaternion.Lerp(mod.transform.localRotation,Quaternion.Euler(0,90,0),5* Time.deltaTime);
 			}
 			if (lhorizontalc < 0f)
 			{
 				base.transform.Translate (1 * Time.deltaTime * Vector3.left* velocidad);
+				mod.transform.localRotation = Quaternion.Lerp(mod.transform.localRotation,Quaternion.Euler(0,-90,0),5* Time.deltaTime);
 			}
 			if (lverticalc > 0f)
 			{
 				base.transform.Translate  (-1 * Time.deltaTime * Vector3.back * velocidad);
+				mod.transform.localRotation = Quaternion.Lerp(mod.transform.localRotation,Quaternion.Euler(0,0,0),5* Time.deltaTime);
 			}
 			if (lverticalc < 0f )
 			{
 				base.transform.Translate (1  * Time.deltaTime * Vector3.back* velocidad);
+				mod.transform.localRotation = Quaternion.Lerp(mod.transform.localRotation,Quaternion.Euler(0,180,0),5* Time.deltaTime);
 			}
 
 		}
@@ -585,7 +648,9 @@ public class jugador : MonoBehaviour
 					this._rb.AddForce(this.jumpforce * Vector3.up);
 					this.tiemposalto = 0.9f;
 					jumpforce = jumpforce / 1.8f;
+					anim.SetBool("salto",true);
 			}
+			else{anim.SetBool("salto",false);}
 		}
 		if (manager.juego == 4)
 		{
@@ -595,9 +660,11 @@ public class jugador : MonoBehaviour
 					this._rb.AddForce(this.jumpforce * Vector3.up);
 					this.tiemposalto = 0.9f;
 					jumpforce = jumpforce / 1.8f;
-
+					anim.SetBool("salto",true);
 			}
+			else{anim.SetBool("salto",false);}
 		}
+		
 	}
 
 	// Token: 0x0600001F RID: 31 RVA: 0x00003149 File Offset: 0x00001349
@@ -622,7 +689,6 @@ public class jugador : MonoBehaviour
 		manager manager = UnityEngine.Object.FindObjectOfType<manager>();
 		if (jumpc > 0f){
 		this._rb.AddForce(this.jumpforce * 1f * Vector3.up);}
-		audio1 = manager.GetComponent<AudioSource>();
 		audio1.Play();
 	}
 
