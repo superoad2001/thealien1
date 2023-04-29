@@ -109,8 +109,19 @@ public class jugador : MonoBehaviour
 	manager manager = UnityEngine.Object.FindObjectOfType<manager>();
 	if(manager.plataforma == 1)
 	{
-	lhorizontalc = Input.GetAxis("Horizontal");
-	lverticalc = Input.GetAxis("Vertical");
+	
+	if(Input.GetAxis("Horizontal") > 0)
+	{lhorizontalc = 1;}
+	else if(Input.GetAxis("Horizontal") < 0)
+	{lhorizontalc = -1;}
+	else{lhorizontalc = 0;}
+
+	if(Input.GetAxis("Vertical") > 0)
+	{lverticalc = 1;}
+	else if(Input.GetAxis("Vertical") < 0)
+	{lverticalc = -1;}
+	else{lverticalc = 0;}
+
 	rhorizontalc = Input.GetAxis("Mouse X");
 	rverticalc = Input.GetAxis("Mouse Y");
 	jumpc = Input.GetAxis("Jump");
