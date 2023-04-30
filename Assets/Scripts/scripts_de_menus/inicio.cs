@@ -28,7 +28,7 @@ public class inicio : MonoBehaviour
 		{
 			if (gemas >= 1)
 			{
-				SceneManager.LoadScene("mundo");
+				SceneManager.LoadScene("piso1_c");
 			}
 			else
 			{

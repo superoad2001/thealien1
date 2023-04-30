@@ -115,7 +115,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 14}
-  - component: {fileID: 26}
+  - component: {fileID: 1450211136}
   m_Layer: 0
   m_Name: inicio
   m_TagString: Untagged
@@ -573,20 +573,6 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 840f3d3825307af42af8cc0e93dec323, type: 2}
---- !u!114 &26
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b9572bd3adce564fb1480a0d57448a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  botonm: 0
-  tactil: {fileID: 542712665}
 --- !u!222 &27
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -650,6 +636,7 @@ RectTransform:
   m_Children:
   - {fileID: 30}
   - {fileID: 213677835}
+  - {fileID: 129706258}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -767,6 +754,91 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
+--- !u!1 &129706257
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 129706258}
+  - component: {fileID: 129706260}
+  - component: {fileID: 129706259}
+  m_Layer: 5
+  m_Name: tutorial (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &129706258
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129706257}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.64, y: 0.64, z: 0.64}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 31}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 240, y: 138}
+  m_SizeDelta: {x: 394.9, y: 158.74}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &129706259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129706257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 6402d2da4cb8f3f48b5ca8cf71969491, type: 3}
+    m_FontSize: 23
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'pulsa (x) o click izquierdo para subir y
+
+    pulsa (b) o click derecho 
+    para bajar
+
+    en el ascensor'
+--- !u!222 &129706260
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129706257}
+  m_CullTransparentMesh: 1
 --- !u!1 &213677834
 GameObject:
   m_ObjectHideFlags: 0
@@ -802,7 +874,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 18.75, y: 127}
+  m_AnchoredPosition: {x: -131, y: 119}
   m_SizeDelta: {x: 545.7, y: 158.74}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &213677836
@@ -838,10 +910,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'muevete con los botones de (wasd) o joystick
-
-    pulsa (espacio) o (a)
-    para avanzar'
+  m_Text: muevete con los botones de (wasd) o joystick
 --- !u!222 &213677837
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1008,8 +1077,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 26}
-          m_TargetAssemblyTypeName: espacio_c, Assembly-CSharp
+        - m_Target: {fileID: 1450211136}
+          m_TargetAssemblyTypeName: piso1_c, Assembly-CSharp
           m_MethodName: boton_m
           m_Mode: 1
           m_Arguments:
@@ -1024,9 +1093,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: jugador, Assembly-CSharp
-          m_MethodName: 
+        - m_Target: {fileID: 1450211136}
+          m_TargetAssemblyTypeName: piso1_c, Assembly-CSharp
+          m_MethodName: detenerm
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1267,6 +1336,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1450211136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80da86bebb6641d49b0719cbc2f9a273, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  botonm: 0
+  tactil: {fileID: 542712665}
 --- !u!1 &1513183093
 GameObject:
   m_ObjectHideFlags: 0

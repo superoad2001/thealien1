@@ -22,7 +22,7 @@ public class inicio1 : MonoBehaviour
 		if (this.botonn == true)
 		{
 			PlayerPrefs.DeleteAll();
-			SceneManager.LoadScene("lallegada");
+			SceneManager.LoadScene("menu_de_carga");
 		}
 	}
 		public void boton_m()
