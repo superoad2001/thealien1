@@ -21,7 +21,7 @@ public class puerta6 : MonoBehaviour
 		manager manager = UnityEngine.Object.FindObjectOfType<manager>();
 		if (col.gameObject.tag == "Player")
 		{
-			SceneManager.LoadScene("nivel5");
+			SceneManager.LoadScene("nivel5_c");
 		}
 	}
 }
