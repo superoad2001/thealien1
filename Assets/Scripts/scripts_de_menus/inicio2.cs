@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 // Token: 0x02000009 RID: 9
-public class inicio1 : MonoBehaviour
+public class inicio2 : MonoBehaviour
 {
 	public bool botonm = false;
 	public bool botonn = false;
@@ -20,11 +20,12 @@ public class inicio1 : MonoBehaviour
 		{temp += 1 * Time.deltaTime;}
 		if (this.botonm == true && temp >= 1)
 		{
+			PlayerPrefs.SetInt("plataforma", 1);
 			SceneManager.LoadScene("menu_de_carga");
 		}
 		if (this.botonn == true && temp >= 1)
 		{
-			PlayerPrefs.DeleteAll();
+			PlayerPrefs.SetInt("plataforma", 2);
 			SceneManager.LoadScene("menu_de_carga");
 		}
 	}

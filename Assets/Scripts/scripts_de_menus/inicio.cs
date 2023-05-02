@@ -11,7 +11,9 @@ public class inicio : MonoBehaviour
 
 	public bool botonm = false;
 	public bool botonn = false;
+	public bool botonc = false;
 	public int gemas = 0;
+	public float temp;
 
 	public void Start()
 	{
@@ -23,8 +25,10 @@ public class inicio : MonoBehaviour
 
 	private void Update()
 	{
+		if (temp < 15)
+		{temp += 1 * Time.deltaTime;}
 
-		if (this.botonm == true)
+		if (this.botonm == true && temp >= 1)
 		{
 			if (gemas >= 1)
 			{
@@ -35,9 +39,13 @@ public class inicio : MonoBehaviour
 				SceneManager.LoadScene("lallegada");
 			}	
 		}
-		if (this.botonn == true)
+		if (this.botonn == true && temp >= 1)
 		{
 			SceneManager.LoadScene("borrar_partida");
+		}
+		if (this.botonc == true && temp >= 1)
+		{
+			SceneManager.LoadScene("opciones");
 		}
 	
 
@@ -49,6 +57,10 @@ public class inicio : MonoBehaviour
 	public void boton_n()
     {
         botonn = true;
+    }
+	public void boton_c()
+    {
+        botonc = true;
     }
 
     public void Detenern()

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 // Token: 0x0200000B RID: 11
 public class manager : MonoBehaviour
 {
+	public int plat = 1;
 	public AudioSource audio;
 	public AudioSource audio1;
 	public AudioSource audio2;
@@ -17,7 +18,7 @@ public class manager : MonoBehaviour
 	// Token: 0x06000025 RID: 37 RVA: 0x0000334C File Offset: 0x0000154C
 	private void Awake() {
 	{
-		this.plataforma = PlayerPrefs.GetInt("plataforma", 1);
+		this.plataforma = PlayerPrefs.GetInt("plataforma", plat);
 	}
 	}
 	private void Start()
