@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Rewired;
 
 // Token: 0x0200001B RID: 27
 public class meta11 : MonoBehaviour

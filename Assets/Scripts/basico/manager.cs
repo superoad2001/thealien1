@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 // Token: 0x0200000B RID: 11
 public class manager : MonoBehaviour
@@ -15,6 +16,11 @@ public class manager : MonoBehaviour
 	public AudioSource audio6;
 	public AudioSource audio7;
 	public int plataforma;
+	public int mejora1;
+	public int mejora2;
+	public int mejora3;
+	public int mejora4;
+	public int mejora5;
 	// Token: 0x06000025 RID: 37 RVA: 0x0000334C File Offset: 0x0000154C
 	private void Awake() {
 	{
@@ -27,7 +33,11 @@ public class manager : MonoBehaviour
 		manager manager = UnityEngine.Object.FindObjectOfType<manager>();
 
 
-
+		this.mejora1 = PlayerPrefs.GetInt("mejorac1", 0);
+		this.mejora2 = PlayerPrefs.GetInt("mejorac2", 0);
+		this.mejora3 = PlayerPrefs.GetInt("mejorac3", 0);
+		this.mejora4 = PlayerPrefs.GetInt("mejorac4", 0);
+		this.mejora5 = PlayerPrefs.GetInt("mejorac5", 0);
 		this.tengomejora = PlayerPrefs.GetInt("tengomejora", 0);
 		this.cinematicaf = PlayerPrefs.GetInt("cinfinal", 0);
 		this.gema1 = PlayerPrefs.GetInt("gema1", 0);
@@ -596,6 +606,31 @@ public class manager : MonoBehaviour
 		if (juego == 6 && tengomejora == 1)
 		{
 			this.mision.text = "MISION fase final: vuela arriba a la plataforma de aterrizaje y sal de esta galaxia";
+		}
+		if(mejora1 == 0 && gemas >= 3 && monedas >= 10)
+		{
+			PlayerPrefs.SetInt("mejorac1", 1);
+			SceneManager.LoadScene("mejora1");
+		}
+		if(mejora2 == 0 && gemas >= 6 && monedas >= 20)
+		{
+			PlayerPrefs.SetInt("mejorac2", 1);
+			SceneManager.LoadScene("mejora2");
+		}
+		if(mejora3 == 0 && gemas >= 9 && monedas >= 30)
+		{
+			PlayerPrefs.SetInt("mejorac3", 1);
+			SceneManager.LoadScene("mejora3");
+		}
+		if(mejora4 == 0 && gemas >= 12 && monedas >= 40)
+		{
+			PlayerPrefs.SetInt("mejorac4", 1);
+			SceneManager.LoadScene("mejora4");
+		}
+		if(mejora5 == 0 && fragmento >= 3 && monedas >= 50)
+		{
+			PlayerPrefs.SetInt("mejorac5", 1);
+			SceneManager.LoadScene("mejora5");
 		}
 
 	}

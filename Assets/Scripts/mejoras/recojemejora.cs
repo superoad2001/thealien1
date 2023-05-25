@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // Token: 0x02000073 RID: 115
 public class recojemejora : MonoBehaviour
@@ -28,6 +29,8 @@ public class recojemejora : MonoBehaviour
 			manager.tengomejora = 1;
 			PlayerPrefs.SetInt("tengomejora", manager.tengomejora);
 			UnityEngine.Object.Destroy(base.gameObject);
+			SceneManager.LoadScene("espacio");
+
 		}
 	}
 }

@@ -7,6 +7,7 @@ public class camara : MonoBehaviour
 	// Token: 0x06000009 RID: 9 RVA: 0x0000227D File Offset: 0x0000047D
 	private void Start()
 	{
+		
 	}
 
 	// Token: 0x0600000A RID: 10 RVA: 0x00002280 File Offset: 0x00000480

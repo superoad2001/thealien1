@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Rewired;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -14,6 +15,7 @@ public class inicio : MonoBehaviour
 	public bool botonc = false;
 	public int gemas = 0;
 	public float temp;
+	public AudioSource audio;
 
 	public void Start()
 	{
@@ -25,6 +27,11 @@ public class inicio : MonoBehaviour
 
 	private void Update()
 	{
+
+		if(!audio.isPlaying)
+		{
+			SceneManager.LoadScene("intro");
+		}
 		if (temp < 15)
 		{temp += 1 * Time.deltaTime;}
 

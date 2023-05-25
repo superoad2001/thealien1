@@ -1,12 +1,15 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Rewired;
 using UnityEngine.UI;
 
 // Token: 0x02000007 RID: 7
 public class hiper : MonoBehaviour
 {
 	public bool botonm = false;
+	[SerializeField]private int playerID = 0;
+	[SerializeField]private Player player;
 	public void boton_m()
     {
         botonm = true;
@@ -18,6 +21,7 @@ public class hiper : MonoBehaviour
 	// Token: 0x06000012 RID: 18 RVA: 0x0000243B File Offset: 0x0000063B
 	private void Start()
 	{
+		player = ReInput.players.GetPlayer(playerID);
 	}
 
 	// Token: 0x06000013 RID: 19 RVA: 0x0000243D File Offset: 0x0000063D
@@ -32,7 +36,7 @@ public class hiper : MonoBehaviour
 		if (col.gameObject.tag == "Player" && manager.tengomejora == 1)
 		{
 			this.tutfinala.text = "pulsa (click derecho) o (B) para volver a casa";
-			if (Input.GetAxis("m") < 0f || botonm == true)
+			if (player.GetAxis("b") > 0f || botonm == true)
 			{
 				SceneManager.LoadScene("lasalida");
 			}

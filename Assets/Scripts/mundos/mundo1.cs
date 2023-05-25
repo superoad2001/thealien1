@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Rewired;
 
 // Token: 0x02000015 RID: 21
 public class mundo1 : MonoBehaviour

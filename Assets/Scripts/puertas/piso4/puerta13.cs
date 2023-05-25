@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Rewired;
 
 // Token: 0x0200006F RID: 111
 public class puerta13 : MonoBehaviour

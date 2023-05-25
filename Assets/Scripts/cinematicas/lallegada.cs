@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Rewired;
 
 // Token: 0x02000010 RID: 16
 public class lallegada : MonoBehaviour
@@ -20,7 +21,6 @@ public class lallegada : MonoBehaviour
 	{
 		if (col.gameObject.tag == "Player")
 		{
-			Debug.Log("Hello: ");
 			SceneManager.LoadScene("cinematicainicial");
 		}
 	}
