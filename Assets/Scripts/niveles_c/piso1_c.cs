@@ -30,7 +30,7 @@ public class piso1_c : MonoBehaviour
 	{
 		if (player.GetAxis("a") > 0f || botonm == true)
 		{
-			SceneManager.LoadScene("piso1c");
+			SceneManager.LoadScene("piso1");
 		}
 	}
 	public void boton_m()
