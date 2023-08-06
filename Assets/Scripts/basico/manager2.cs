@@ -78,6 +78,23 @@ public class manager2 : MonoBehaviour
             nv13.text = "nivel 13 subida infernal a secas : " + recordnv13;
             nv14.text = "nivel 14 carrera de la muerte : " + recordnv14;
             nv15.text = "nivel 15  pilla pilla nivel dios : " + recordnv15;
+            nv1.text = nv1.text.Substring(0, 31);
+            nv2.text = nv2.text.Substring(0, 34);
+            nv3.text = nv3.text.Substring(0, 37);
+            nv4.text = nv4.text.Substring(0, 39);
+            nv5.text = nv5.text.Substring(0, 30);
+
+            nv6.text = nv6.text.Substring(0, 35);
+            nv7.text = nv7.text.Substring(0, 37);
+            nv8.text = nv8.text.Substring(0, 43);
+            nv9.text = nv9.text.Substring(0, 39);
+            nv10.text = nv10.text.Substring(0, 47);
+
+            nv11.text = nv11.text.Substring(0, 33);
+            nv12.text = nv12.text.Substring(0, 30);
+            nv13.text = nv13.text.Substring(0, 39);
+            nv14.text = nv14.text.Substring(0, 36);
+            nv15.text = nv15.text.Substring(0, 39);
         }
         
     }
@@ -85,11 +102,13 @@ public class manager2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        crono.text = crono.text.Substring(0, 12);
         manager manager = UnityEngine.Object.FindObjectOfType<manager>();
         if(manager.juego != -1)
         {
         contador += 1 * Time.deltaTime;
         this.crono.text = "crono : " + contador;
         }
+        crono.text = crono.text.Substring(0, 12);
     }
 }
