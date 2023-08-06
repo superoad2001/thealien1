@@ -33,6 +33,7 @@ public class jugador : MonoBehaviour
 	public Joystick joyr;
 	public GameObject tactil;
 	public Animator anim;
+	public float pausac;
 	// Token: 0x0600001D RID: 29 RVA: 0x000025E8 File Offset: 0x000007E8
 	private void Start()
 	{
@@ -81,10 +82,17 @@ public class jugador : MonoBehaviour
 	public bool bajar = false;
 	public bool subir = false;
 	private bool moverdelante = true;
+	public GameObject juego;
+    public GameObject pausa1;
+	public float temp9;
 	// Token: 0x0600001E RID: 30 RVA: 0x00002604 File Offset: 0x00000804
 	public void A()
 	{
 		jumpc = 1;
+	}
+	public void pausacact()
+	{
+		pausac = 1;
 	}
 	public void B()
 	{
@@ -101,6 +109,10 @@ public class jugador : MonoBehaviour
 	public void detB()
 	{
 		mc = 0;
+	}
+	public void detpausac()
+	{
+		pausac = 0;
 	}
 	public void detX()
 	{
@@ -131,6 +143,7 @@ public class jugador : MonoBehaviour
 	jumpc = player.GetAxis("a");
 	mc = player.GetAxis("b");
 	nc = player.GetAxis("x");
+	pausac = player.GetAxis("pausa");
 	}
 	
 	if(manager.plataforma == 2)
@@ -389,6 +402,17 @@ public class jugador : MonoBehaviour
 		if(subirt4 == true && tiempoascensor > 3){SceneManager.LoadScene("piso5t");}
 		if(bajart4 == true && tiempoascensor > 3){SceneManager.LoadScene("piso3t");}
 		if(bajart5 == true && tiempoascensor > 3){SceneManager.LoadScene("piso4t");}
+
+
+		if (pausac > 0 && temp9 > 0.3f)
+		{
+			pausa1.SetActive(true);
+			pausac = 0;
+			temp9 = 0;
+			juego.SetActive(false);
+			Cursor.visible = true;
+        	Cursor.lockState = CursorLockMode.None;
+		}
 
 
 
@@ -679,6 +703,8 @@ public class jugador : MonoBehaviour
 			}
 			else{anim.SetBool("salto",false);}
 		}
+		if(temp9 < 15)
+        {temp9 += 1 * Time.deltaTime;}
 		
 	}
 
