@@ -850,7 +850,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &85
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -965,7 +965,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.04397323, g: 0.10396301, b: 0.1433593, a: 1}
+  m_IndirectSpecularColor: {r: 0.046520352, g: 0.10456786, b: 0.14229167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!108 &102
 Light:
@@ -1333,6 +1333,7 @@ MonoBehaviour:
   subir: 0
   juego: {fileID: 1680085051}
   pausa1: {fileID: 837424234}
+  temp9: 0
   velocidad: 4
   velocidadjet: 2
   velocidadr: 20
@@ -3505,6 +3506,8 @@ MonoBehaviour:
   juego: {fileID: 1680085051}
   pausa1: {fileID: 837424234}
   plataforma: 0
+  playerID: 0
+  temp: 0
 --- !u!4 &837424236
 Transform:
   m_ObjectHideFlags: 0
