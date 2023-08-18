@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 51
+  controlID: 30
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 50
+  controlID: 29
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 20
+  controlID: 107
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -554,10 +554,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 02510000
-      m_LastClickedID: 20738
-      m_ExpandedIDs: ccf9ffff34fbffffaa510000
+      scrollPos: {x: 0, y: 127}
+      m_SelectedIDs: 2c7a0000
+      m_LastClickedID: 31276
+      m_ExpandedIDs: eeecffff3aedffff7eedffff24f2ffff92f2ffff14f3ffff18f6ffff6ef6ffffd0f9ffff34fbffff3856000096560000e8560000425f0000aa5f0000b65f0000466b0000c47900002c7a0000387a0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -663,22 +663,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/AudioClip/GUIA/PISOS/FASE 1
+    - Assets/Scenes/mundos
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 53
   m_LastFolders:
-  - Assets/AudioClip/GUIA/PISOS/FASE 1
+  - Assets/Scenes/mundos
   m_LastFoldersGridSize: 53
   m_LastProjectPath: D:\juegos unity\thealien1
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 0e560000
-    m_LastClickedID: 22030
-    m_ExpandedIDs: 00000000364e0000384e00003a4e00003c4e00003e4e00004a4e000000ca9a3b
+    scrollPos: {x: 0, y: 209}
+    m_SelectedIDs: e8540000
+    m_LastClickedID: 21736
+    m_ExpandedIDs: 00000000be540000c0540000c2540000c4540000c6540000d2540000f054000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -706,7 +706,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000364e0000384e00003a4e00003c4e00003e4e0000
+    m_ExpandedIDs: 00000000be540000c0540000c2540000c4540000c6540000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -987,9 +987,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 704.685, y: 75.4875, z: 0}
+    m_Target: {x: 10.686615, y: 533.6344, z: 409.94528}
     speed: 2
-    m_Value: {x: 704.685, y: 75.4875, z: 0}
+    m_Value: {x: 10.686615, y: 533.6344, z: 409.94528}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1036,13 +1036,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.22727221, y: 0.24319197, z: -0.059036713, w: 0.9412515}
+    m_Target: {x: -0.042815033, y: 0.942155, z: -0.13074715, w: -0.30603212}
     speed: 2
-    m_Value: {x: 0.22724555, y: 0.24316345, z: -0.059029788, w: 0.9411411}
+    m_Value: {x: -0.038684845, y: 0.95183706, z: -0.1335583, w: -0.27326167}
   m_Size:
-    m_Target: 111.729164
+    m_Target: 38.704304
     speed: 2
-    m_Value: 111.729164
+    m_Value: 38.704304
   m_Ortho:
     m_Target: 0
     speed: 2
