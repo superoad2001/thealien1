@@ -80,6 +80,7 @@ GameObject:
   - component: {fileID: 30}
   - component: {fileID: 27}
   - component: {fileID: 35}
+  - component: {fileID: 36}
   m_Layer: 5
   m_Name: cargar
   m_TagString: Untagged
@@ -196,7 +197,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!108 &21
 Light:
@@ -474,6 +475,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Apreta (espacio) o (a) para continuar
+--- !u!114 &36
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &37
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -525,6 +538,7 @@ GameObject:
   - component: {fileID: 213677835}
   - component: {fileID: 213677837}
   - component: {fileID: 213677836}
+  - component: {fileID: 213677838}
   m_Layer: 5
   m_Name: tutorial
   m_TagString: Untagged
@@ -598,6 +612,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 213677834}
   m_CullTransparentMesh: 1
+--- !u!114 &213677838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213677834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &688847297
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,7 +683,7 @@ VideoPlayer:
   m_TargetAudioSources:
   - {fileID: 0}
   m_DirectAudioVolumes:
-  - 1
+  - 0.593
   m_Url: 
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
@@ -1164,6 +1190,21 @@ MonoBehaviour:
   audio6: {fileID: 0}
   audio7: {fileID: 0}
   plataforma: 0
+  mejora1: 0
+  mejora2: 0
+  mejora3: 0
+  mejora4: 0
+  mejora5: 0
+  idioma: 
+  boton1: {fileID: 35}
+  boton2: {fileID: 213677836}
+  boton3: {fileID: 0}
+  boton4: {fileID: 0}
+  boton5: {fileID: 0}
+  boton6: {fileID: 0}
+  menu: 0
+  estados: 0
+  tuto: 12
   mundos: 0
   unavez: 1
   jugador1: {fileID: 0}

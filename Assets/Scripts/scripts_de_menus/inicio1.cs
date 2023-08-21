@@ -26,7 +26,7 @@ public class inicio1 : MonoBehaviour
 		if (this.botonn == true && temp >= 1)
 		{
 			PlayerPrefs.DeleteAll();
-			SceneManager.LoadScene("menu_de_carga");
+			SceneManager.LoadScene("idioma");
 		}
 	}
 		public void boton_m()

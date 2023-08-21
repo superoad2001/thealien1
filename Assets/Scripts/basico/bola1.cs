@@ -13,7 +13,19 @@ public class bola1 : MonoBehaviour
 	// Token: 0x06000007 RID: 7 RVA: 0x000020A0 File Offset: 0x000002A0
 	private void Update()
 	{
+		manager manager = UnityEngine.Object.FindObjectOfType<manager>();
+		if(manager.idioma == "es")
+		{
 		this.puestoj.text = "puesto : " + this.puesto;
+		}
+		if(manager.idioma == "en")
+		{
+		this.puestoj.text = "place : " + this.puesto;
+		}
+		if(manager.idioma == "cat")
+		{
+		this.puestoj.text = "lloc : " + this.puesto;
+		}
 		base.transform.Translate(Vector3.forward * Time.deltaTime / 1.1f * this.velocidad);
 		if (base.gameObject.transform.position.z > this.jugador.gameObject.transform.position.z)
 		{

@@ -21,7 +21,7 @@ public class pausa : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(player.GetAxis("pausa") > 0 && temp > 0.3f)
+        if(player.GetAxis("pausa") > 0 && temp > 0.7f)
         {
             continuar();
         }

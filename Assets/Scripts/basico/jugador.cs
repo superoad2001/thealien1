@@ -404,7 +404,7 @@ public class jugador : MonoBehaviour
 		if(bajart5 == true && tiempoascensor > 3){SceneManager.LoadScene("piso4t");}
 
 
-		if (pausac > 0 && temp9 > 0.3f)
+		if (pausac > 0 && temp9 > 0.7f)
 		{
 			pausa1.SetActive(true);
 			pausac = 0;
@@ -757,20 +757,37 @@ public class jugador : MonoBehaviour
 		manager manager = UnityEngine.Object.FindObjectOfType<manager>();
 		if (col.gameObject.tag == "ascensor" && manager.juego == 0)
 		{
-			if (!this.dentrotienda)
+			if(manager.idioma == "es")
 			{
-				this.ascensortut.text = "(click derecho) o (b) para subir de planta  (click izquierdo) o (x) para bajar de planta";
+				if (!this.dentrotienda)
+				{
+					this.ascensortut.text = "(click derecho) o (b) para subir de planta  (click izquierdo) o (x) para bajar de planta";
+				}
+					if (manager.piso == 5)
+				{
+					this.ascensortut.text = "(click derecho) o (b) para ir a la torre del tiempo (click izquierdo) o (x) para bajar de planta";
+				}
 			}
-				if (manager.piso == 5)
+			if(manager.idioma == "en")
 			{
-				this.ascensortut.text = "(click derecho) o (b) para ir a la torre del tiempo (click izquierdo) o (x) para bajar de planta";
+				if (!this.dentrotienda)
+				{
+					this.ascensortut.text = "(right click) or (b) to go up the floor  (left click) or (x) to go downstairs";
+				}
+					if (manager.piso == 5)
+				{
+					this.ascensortut.text = "(right click) or (b) to go to the tower of time (left click) or (x) to go downstairs";
+				}
 			}
 			this.ascensor = true;
 			
 		}
 		if (col.gameObject.tag == "ascensor" && manager.juego == 4)
 		{
-			this.ascensortut.text = "(click derecho) o (b) para subir de planta  ";
+			if(manager.idioma == "es")
+			{this.ascensortut.text = "(click derecho) o (b) para subir de planta  ";}
+			if(manager.idioma == "en")
+			{this.ascensortut.text = "(right click) o (b) to go up the floor ";}
 			this.ascensor = true;
 		}
 		if (col.gameObject.tag == "suelo")

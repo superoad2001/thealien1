@@ -107,8 +107,21 @@ public class manager2 : MonoBehaviour
         if(manager.juego != -1)
         {
         contador += 1 * Time.deltaTime;
-        this.crono.text = "crono : " + contador;
+            if(manager.idioma == "es")
+            {
+            this.crono.text = "crono : " + contador;
+            crono.text = crono.text.Substring(0, 12);
+            }
+            if(manager.idioma == "en")
+            {
+            this.crono.text = "chrono : " + contador;
+            crono.text = crono.text.Substring(0, 13);
+            }
+            if(manager.idioma == "cat")
+            {
+            this.crono.text = "crono : " + contador;
+            crono.text = crono.text.Substring(0, 12);
+            }
         }
-        crono.text = crono.text.Substring(0, 12);
     }
 }

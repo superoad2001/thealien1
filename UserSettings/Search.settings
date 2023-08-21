@@ -10,12 +10,18 @@ scopes = {
 	"last_search.2EEDD5D8" = ""
 	"OpenInspectorPreview.2EEDD5D8" = "0"
 	"currentGroup.2EEDD5D8" = "all"
-	"last_search.DD5CDD96" = "tact"
+	"last_search.DD5CDD96" = "manager2"
 	"OpenInspectorPreview.DD5CDD96" = "0"
 	"currentGroup.DD5CDD96" = "scene"
 	"last_search.F8949528" = "tact"
 	"OpenInspectorPreview.F8949528" = "0"
 	"currentGroup.F8949528" = "all"
+	"last_search.B655092D" = ""
+	"OpenInspectorPreview.B655092D" = "0"
+	"currentGroup.B655092D" = "all"
+	"last_search.2138236A" = "manager2"
+	"OpenInspectorPreview.2138236A" = "0"
+	"currentGroup.2138236A" = "asset"
 }
 providers = {
 	adb = {
@@ -63,10 +69,21 @@ providers = {
 		priority = 100
 		defaultAction = null
 	}
+	at = {
+		active = true
+		priority = 100
+		defaultAction = null
+	}
+	st = {
+		active = true
+		priority = 100
+		defaultAction = null
+	}
 }
 objectSelectors = {
 }
 recentSearches = [
+	"manager2"
 ]
 searchItemFavorites = [
 ]

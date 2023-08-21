@@ -8,6 +8,9 @@ public class inicio2 : MonoBehaviour
 {
 	public bool botonm = false;
 	public bool botonn = false;
+	public bool botonc = false;
+	public bool botont = false;
+	public bool botonr = false;
 	public float temp;
 	// Token: 0x0600001A RID: 26 RVA: 0x00002523 File Offset: 0x00000723
 	private void Start()
@@ -29,6 +32,23 @@ public class inicio2 : MonoBehaviour
 			PlayerPrefs.SetInt("plataforma", 2);
 			SceneManager.LoadScene("menu_de_carga");
 		}
+
+
+		if (this.botonc == true && temp >= 1)
+		{
+			PlayerPrefs.SetString("idioma", "es");
+			SceneManager.LoadScene("menu_de_carga");
+		}
+		if (this.botont == true && temp >= 1)
+		{
+			PlayerPrefs.SetString("idioma", "en");
+			SceneManager.LoadScene("menu_de_carga");
+		}
+		if (this.botonr == true && temp >= 1)
+		{
+			PlayerPrefs.SetString("idioma", "cat");
+			SceneManager.LoadScene("menu_de_cargas");
+		}
 	}
 		public void boton_m()
     {
@@ -38,13 +58,18 @@ public class inicio2 : MonoBehaviour
     {
         botonn = true;
     }
+	public void boton_c()
+    {
+        botonc = true;
+    }
+	public void boton_t()
+    {
+        botont = true;
+    }
+	public void boton_r()
+    {
+        botonr = true;
+    }
 
-    public void Detenern()
-    {
-        botonn = false;
-    }
-	public void Detenerm()
-    {
-        botonm = false;
-    }
+
 }

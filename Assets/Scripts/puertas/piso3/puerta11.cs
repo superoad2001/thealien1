@@ -22,7 +22,7 @@ public class puerta11 : MonoBehaviour
 		manager manager = UnityEngine.Object.FindObjectOfType<manager>();
 		if (col.gameObject.tag == "Player" )
 		{
-			SceneManager.LoadScene("nivel9");
+			SceneManager.LoadScene("nivel9_c");
 		}
 	}
 }

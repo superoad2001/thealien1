@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Rewired;
 
@@ -14,6 +15,7 @@ public class espacio_c : MonoBehaviour
 	// Token: 0x06000017 RID: 23 RVA: 0x000024DB File Offset: 0x000006DB
 	private void Start()
 	{
+
 		player = ReInput.players.GetPlayer(playerID);
 		manager manager = UnityEngine.Object.FindObjectOfType<manager>();
 		if(manager.plataforma == 1)

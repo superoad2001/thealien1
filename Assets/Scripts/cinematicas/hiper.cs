@@ -35,7 +35,12 @@ public class hiper : MonoBehaviour
 		manager manager = UnityEngine.Object.FindObjectOfType<manager>();
 		if (col.gameObject.tag == "Player" && manager.tengomejora == 1)
 		{
-			this.tutfinala.text = "pulsa (click derecho) o (B) para volver a casa";
+			if(manager.idioma == "es")
+			{this.tutfinala.text = "pulsa (click derecho) o (B) para volver a casa";}
+			if(manager.idioma == "en")
+			{this.tutfinala.text = "press (right click) or (B) To come back home";}
+			if(manager.idioma == "cat")
+			{this.tutfinala.text = "pren el (click dret) o la (B) per tornar a casa";}
 			if (player.GetAxis("b") > 0f || botonm == true)
 			{
 				SceneManager.LoadScene("lasalida");
