@@ -391,6 +391,7 @@ MonoBehaviour:
   boton4: {fileID: 0}
   boton5: {fileID: 0}
   boton6: {fileID: 0}
+  boton7: {fileID: 0}
   menu: -2
   estados: 0
   tuto: 0
@@ -526,7 +527,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0059802714, g: 0.01957898, b: 0.02021509, a: 1}
+  m_IndirectSpecularColor: {r: 0.044602625, g: 0.01858224, b: 0.00011298343, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!108 &21
 Light:
@@ -846,7 +847,7 @@ VideoPlayer:
   m_AspectRatio: 2
   m_DataSource: 0
   m_PlaybackSpeed: 1
-  m_AudioOutputMode: 2
+  m_AudioOutputMode: 0
   m_TargetAudioSources:
   - {fileID: 0}
   m_DirectAudioVolumes:
@@ -967,7 +968,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b02b102dcf827a2419d66d7c03f98b98, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1278,7 +1279,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: fa18b1db523c8bd4a919f4b26ba4a861, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2044,6 +2045,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1543545525}
+  - component: {fileID: 1543545526}
   m_Layer: 0
   m_Name: sonidos
   m_TagString: Untagged
@@ -2069,6 +2071,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1543545526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543545524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b82ff17fa1a7b2418c20abc43fbc396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audio: {fileID: 0}
+  audioesp: {fileID: 203291682}
+  audioen: {fileID: 2014333938}
+  audiocat: {fileID: 480396208}
 --- !u!1001 &1826943711
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2189,7 +2207,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 0826358142ca5dd47a20a2a611363b64, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

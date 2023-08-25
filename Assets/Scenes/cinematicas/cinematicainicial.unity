@@ -1992,7 +1992,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.046520352, g: 0.10456786, b: 0.14229167, a: 1}
+  m_IndirectSpecularColor: {r: 0.04397323, g: 0.10396301, b: 0.1433593, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!108 &301
 Light:
@@ -2713,6 +2713,7 @@ MonoBehaviour:
   boton4: {fileID: 0}
   boton5: {fileID: 0}
   boton6: {fileID: 0}
+  boton7: {fileID: 0}
   menu: 0
   estados: 2
   tuto: 0
@@ -3144,7 +3145,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7e5b13166a76ab242a3441a41b5f0cfb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2951a1294127934408b507e7241fbac2, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.78
   m_Pitch: 1
@@ -4569,7 +4570,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7e5b13166a76ab242a3441a41b5f0cfb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 10ac8d756d41cc243a5604124b87f611, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.78
   m_Pitch: 1
