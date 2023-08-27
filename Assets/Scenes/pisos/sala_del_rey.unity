@@ -782,7 +782,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.21324846, g: 0.09327752, b: 0.009953679, a: 1}
+  m_IndirectSpecularColor: {r: 0.21837309, g: 0.09271214, b: 0.0004576145, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!135 &139
 SphereCollider:
@@ -1165,6 +1165,7 @@ MonoBehaviour:
   boton4: {fileID: 0}
   boton5: {fileID: 0}
   boton6: {fileID: 0}
+  boton7: {fileID: 0}
   menu: 0
   estados: 4
   tuto: 0
@@ -6889,7 +6890,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: cb48e644c26807d41a123390ef66ff39, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 71acf85d715d38e4c81610473c3b0931, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.496
   m_Pitch: 1

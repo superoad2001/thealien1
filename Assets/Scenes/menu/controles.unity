@@ -200,6 +200,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   botonm: 0
   botonn: 0
+  botonc: 0
+  botont: 0
+  botonr: 0
   temp: 0
 --- !u!20 &17
 Camera:
@@ -294,6 +297,7 @@ MonoBehaviour:
   boton4: {fileID: 771037324}
   boton5: {fileID: 1336892283}
   boton6: {fileID: 341404777}
+  boton7: {fileID: 0}
   menu: 5
   estados: 0
   tuto: 0
@@ -429,7 +433,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.046520352, g: 0.10456786, b: 0.14229167, a: 1}
+  m_IndirectSpecularColor: {r: 0.04397323, g: 0.10396301, b: 0.1433593, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!108 &23
 Light:
@@ -1250,10 +1254,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: af5505d6b7deb4647a13e210a0d53df4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 78dbe3b8135cb4a418fd97ec08c400e3, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1.2
+  m_Volume: 0.737
+  m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0

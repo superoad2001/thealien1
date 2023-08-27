@@ -212,6 +212,38 @@ public class manager : MonoBehaviour
 				audio6en.Play();
 			}
 		}
+		if(idioma == "cat")
+		{
+			if (this.piso == 1 && this.gemas == 0 && jugador.dentrotienda == false)
+			{
+				audiocat.Play();
+			}
+			if (this.piso == 1 && this.gemas >= 1 && this.gemas <= 3 && tengovel == 0 && jugador.dentrotienda == false)
+			{
+				audio1cat.Play();
+			}
+			
+			if (this.piso == 1 && this.gemas >= 3 && this.gemas <= 6 && jugador.dentrotienda == false && tengovel == 1 && tengocoche == 0)
+			{
+				audio2cat.Play();
+			}
+			if (this.piso == 1 && this.gemas >= 6 && this.gemas <= 9 && tengocoche == 1 && jugador.dentrotienda == false && tengosalto == 0)
+			{
+				audio3cat.Play();
+			}
+			if (this.piso == 1 && this.gemas >= 9 && this.gemas <= 12 && tengosalto == 1 && jugador.dentrotienda == false && tengonave == 0)
+			{
+				audio4cat.Play();
+			}
+			if (this.piso == 1 && this.gemas >= 12 && tengonave == 1 && jugador.dentrotienda == false && fragmento < 3 && tengomejora == 0 && tengollave4 == 0)
+			{
+				audio5cat.Play();
+			}
+			if (this.piso == 1 && this.gemas == 15 && tengomejora == 0 && jugador.dentrotienda == false && fragmento == 3 && tengollave4 == 0 && monedas == 50)
+			{
+				audio6cat.Play();
+			}
+		}
 	}
 	public bool mundos = false;
 		// Token: 0x04000021 RID: 33

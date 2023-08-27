@@ -47,7 +47,7 @@ public class inicio2 : MonoBehaviour
 		if (this.botonr == true && temp >= 1)
 		{
 			PlayerPrefs.SetString("idioma", "cat");
-			SceneManager.LoadScene("menu_de_cargas");
+			SceneManager.LoadScene("menu_de_carga");
 		}
 	}
 		public void boton_m()
