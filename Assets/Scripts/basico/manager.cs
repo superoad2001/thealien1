@@ -906,7 +906,7 @@ public class manager : MonoBehaviour
 		if(menu == 1)
 		{
 			boton1.text = "delete data";
-			boton2.text = "options";
+			boton2.text = "settings";
 			boton3.text = "start adventure";
 		}
 		if(menu == -1)
@@ -927,7 +927,7 @@ public class manager : MonoBehaviour
 		{
 			boton1.text = "controls";
 			boton2.text = "keyboard and mouse or controller";
-			boton3.text = "touch (android only)";
+			boton3.text = "touch controls";
 			boton4.text = "language";
 		}
 		if(menu == 4)
@@ -943,7 +943,7 @@ public class manager : MonoBehaviour
 			boton3.text = "touch device";
 			boton4.text = "what device are you playing on?";
 			boton5.text = "if you are playing on a tablet or android pc select touch device if you are on the above devices with a controller or on pc or console select pc or console";
-			boton6.text = "once selected to change it go to options";
+			boton6.text = "once selected to change it go to settings";
 		}
 		if (this.juego == 0 && this.piso == 1 && jugador.dentrotienda == true)
 		{
