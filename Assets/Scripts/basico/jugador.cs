@@ -1,4 +1,5 @@
-using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Rewired;
@@ -10,6 +11,7 @@ public class jugador : MonoBehaviour
 	[SerializeField]private int playerID = 0;
 	[SerializeField]private Player player;
 	public AudioSource audio1;
+	public float temppaso = 1;
 	public float rotspeed = 3;
 	public GameObject camara;
 	private float cameraverticalangle;
@@ -33,7 +35,12 @@ public class jugador : MonoBehaviour
 	public Joystick joyr;
 	public GameObject tactil;
 	public Animator anim;
+	public AudioSource pasosnave;
+	public AudioSource pasos1;
+	public AudioSource pasos2;
+	public int randompaso;
 	public float pausac;
+	public float pasotiempo;
 	// Token: 0x0600001D RID: 29 RVA: 0x000025E8 File Offset: 0x000007E8
 	private void Start()
 	{
@@ -458,8 +465,10 @@ public class jugador : MonoBehaviour
 			}
 			if (jumpc > 0f )
 			{
+				pasosnave.UnPause();
 				base.transform.Translate(-Vector3.back * (float)this.velocidad * Time.deltaTime);
 			}
+			else{pasosnave.Pause();}
 
 			rotationinput.x = rhorizontalc * rotspeed * Time.deltaTime;
             rotationinput.y = rverticalc * rotspeed * Time.deltaTime;
@@ -472,11 +481,14 @@ public class jugador : MonoBehaviour
 			if (jumpc > 0f )
 			{
 				base.transform.position -= (float)this.velocidad * Time.deltaTime * Vector3.back;
+				pasosnave.UnPause();
 			}
-			if (mc > 0f )
+			else if (mc > 0f )
 			{
 				base.transform.position -= (float)this.velocidad * Time.deltaTime * Vector3.forward;
+				pasosnave.UnPause();
 			}
+			else{pasosnave.Pause();}
 			if (lhorizontalc > 0f )
 			{
 				base.transform.position -= +1 * (float)this.velocidad * Time.deltaTime * Vector3.left;
@@ -558,6 +570,25 @@ public class jugador : MonoBehaviour
 				base.transform.position -= -1 * (float)this.velocidad * Time.deltaTime * Vector3.back;
 				mod.transform.localRotation = Quaternion.Lerp(mod.transform.localRotation,Quaternion.Euler(0,90,0),5* Time.deltaTime);
 			}
+			if(suelo == true && lverticalc < 0f || suelo == true && lverticalc > 0f || suelo == true && lhorizontalc < 0f|| suelo == true && lhorizontalc > 0f)
+				{
+				if(temppaso > pasotiempo)
+				{
+				randompaso = Random.Range(1,3);
+				if(randompaso == 1)
+				{
+					pasos1.Play();
+				}
+				if(randompaso == 2)
+				{
+					pasos2.Play();
+				}
+				temppaso = 0;
+				pasotiempo = Random.Range(0.4f,0.6f);
+				}
+				if(temppaso < 15)
+				{temppaso += 1 * Time.deltaTime;}
+				}
 			this.tiempogiro2 += Time.deltaTime;
 		
 			
@@ -579,6 +610,25 @@ public class jugador : MonoBehaviour
 				base.transform.position -= +1 * (float)this.velocidad * Time.deltaTime * Vector3.right;
 				mod.transform.localRotation = Quaternion.Lerp(mod.transform.localRotation,Quaternion.Euler(0,-90,0),5* Time.deltaTime);
 			}
+			if(suelo == true && lverticalc < 0f || suelo == true && lverticalc > 0f || suelo == true && lhorizontalc < 0f|| suelo == true && lhorizontalc > 0f)
+				{
+				if(temppaso > pasotiempo)
+				{
+				randompaso = Random.Range(1,3);
+				if(randompaso == 1)
+				{
+					pasos1.Play();
+				}
+				if(randompaso == 2)
+				{
+					pasos2.Play();
+				}
+				temppaso = 0;
+				pasotiempo = Random.Range(0.4f,0.6f);
+				}
+				if(temppaso < 15)
+				{temppaso += 1 * Time.deltaTime;}
+				}
 			this.tiempogiro2 += Time.deltaTime;
 		}
 		if (manager.juego == 4)
@@ -607,6 +657,25 @@ public class jugador : MonoBehaviour
 				{
 					base.transform.Translate (1  * Time.deltaTime * Vector3.back* velocidad);
 					mod.transform.localRotation = Quaternion.Lerp(mod.transform.localRotation,Quaternion.Euler(0,180,0),5* Time.deltaTime);
+				}
+				if(suelo == true && lverticalc < 0f || suelo == true && lverticalc > 0f || suelo == true && lhorizontalc < 0f|| suelo == true && lhorizontalc > 0f)
+				{
+				if(temppaso > pasotiempo)
+				{
+				randompaso = Random.Range(1,3);
+				if(randompaso == 1)
+				{
+					pasos1.Play();
+				}
+				if(randompaso == 2)
+				{
+					pasos2.Play();
+				}
+				temppaso = 0;
+				pasotiempo = Random.Range(0.4f,0.6f);
+				}
+				if(temppaso < 15)
+				{temppaso += 1 * Time.deltaTime;}
 				}
 
 			}
@@ -646,6 +715,25 @@ public class jugador : MonoBehaviour
 				base.transform.Translate (1  * Time.deltaTime * Vector3.back* velocidad);
 				mod.transform.localRotation = Quaternion.Lerp(mod.transform.localRotation,Quaternion.Euler(0,180,0),5* Time.deltaTime);
 			}
+			if(suelo == true && lverticalc < 0f || suelo == true && lverticalc > 0f || suelo == true && lhorizontalc < 0f|| suelo == true && lhorizontalc > 0f)
+				{
+				if(temppaso > pasotiempo)
+				{
+				randompaso = Random.Range(1,3);
+				if(randompaso == 1)
+				{
+					pasos1.Play();
+				}
+				if(randompaso == 2)
+				{
+					pasos2.Play();
+				}
+				temppaso = 0;
+				pasotiempo = Random.Range(0.4f,0.6f);
+				}
+				if(temppaso < 15)
+				{temppaso += 1 * Time.deltaTime;}
+				}
 
 		}
 		if (manager.juego == 0 )
