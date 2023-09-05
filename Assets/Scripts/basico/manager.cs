@@ -1247,7 +1247,7 @@ public class manager : MonoBehaviour
 			boton3.text = "dispositiu tactil";
 			boton4.text = "en quin dispositiu estas jugan?";
 			boton5.text = "si estas jugan a un pc tableta o android selecciona dispositiu tactil si estas als anteriors dispositius amb un control o a un pc o consola selecciona pc o consola";
-			boton6.text = "una vez selecionado para cambiarlo entra a opciones";
+			boton6.text = "una vegada selecionat per cambiaro entra a opcions";
 		}
 		if (this.juego == 0 && this.piso == 1 && jugador.dentrotienda == true)
 		{

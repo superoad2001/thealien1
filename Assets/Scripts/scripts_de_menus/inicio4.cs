@@ -24,12 +24,12 @@ public class inicio4 : MonoBehaviour
 		if (this.botonm == true && temp >= 1)
 		{
 			PlayerPrefs.SetInt("plataforma", 1);
-			SceneManager.LoadScene("menu_de_carga");
+			SceneManager.LoadScene("presentacion");
 		}
 		if (this.botonn == true && temp >= 1)
 		{
 			PlayerPrefs.SetInt("plataforma", 2);
-			SceneManager.LoadScene("menu_de_carga");
+			SceneManager.LoadScene("presentacion");
 		}
 		if(plataforma != 0)
 		{
