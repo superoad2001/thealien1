@@ -582,7 +582,7 @@ public class jugador : MonoBehaviour
             float distance = movdire.magnitude * Time.fixedDeltaTime;
             movdire.Normalize();
             RaycastHit hit;
-            if(lhorizontalc == 0f || _rb.SweepTest(movdire,out hit,distance))
+            if(lhorizontalc == 0f || _rb.SweepTest(movdire,out hit,distance,QueryTriggerInteraction.Ignore))
             {
                 _rb.velocity = new Vector3 (0, _rb.velocity.y, 0);
             }
@@ -631,7 +631,7 @@ public class jugador : MonoBehaviour
             float distance = movdire.magnitude * Time.fixedDeltaTime;
             movdire.Normalize();
             RaycastHit hit;
-            if(lhorizontalc == 0f || _rb.SweepTest(movdire,out hit,distance))
+            if(lhorizontalc == 0f || _rb.SweepTest(movdire,out hit,distance,QueryTriggerInteraction.Ignore))
             {
                 _rb.velocity = new Vector3 (0, _rb.velocity.y, 0);
             }
@@ -688,7 +688,7 @@ public class jugador : MonoBehaviour
                 float distance = movdire.magnitude * Time.fixedDeltaTime;
                 movdire.Normalize();
                 RaycastHit hit;
-                if(lverticalc == 0f && lhorizontalc == 0f || _rb.SweepTest(movdire,out hit,distance))
+                if(lverticalc == 0f && lhorizontalc == 0f || _rb.SweepTest(movdire,out hit,distance,QueryTriggerInteraction.Ignore))
                 {
                     _rb.velocity = new Vector3 (0, _rb.velocity.y, 0);
                 }
