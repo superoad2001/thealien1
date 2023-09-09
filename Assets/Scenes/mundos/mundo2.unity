@@ -263,8 +263,8 @@ GameObject:
   - component: {fileID: 75}
   - component: {fileID: 64}
   - component: {fileID: 86}
-  - component: {fileID: 107}
   - component: {fileID: 108}
+  - component: {fileID: 109}
   m_Layer: 0
   m_Name: jugador
   m_TagString: Player
@@ -918,7 +918,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.32336956, g: 0.066514924, b: 0.00068420474, a: 1}
+  m_IndirectSpecularColor: {r: 0.32046375, g: 0.06466808, b: 0.009663448, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!108 &73
 Light:
@@ -1752,20 +1752,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!136 &107
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 15}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.77
-  m_Height: 2.5
-  m_Direction: 1
-  m_Center: {x: 0, y: 1.2, z: 0}
 --- !u!95 &108
 Animator:
   serializedVersion: 5
@@ -1786,6 +1772,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!65 &109
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.99999994, y: 2.2876282, z: 0.99999994}
+  m_Center: {x: 0.000000029802322, y: 1.15, z: 0}
 --- !u!1 &4646112
 GameObject:
   m_ObjectHideFlags: 0

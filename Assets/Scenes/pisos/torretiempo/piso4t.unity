@@ -360,11 +360,11 @@ GameObject:
   - component: {fileID: 31}
   - component: {fileID: 81}
   - component: {fileID: 66}
-  - component: {fileID: 103}
   - component: {fileID: 131}
   - component: {fileID: 84}
   - component: {fileID: 99}
   - component: {fileID: 133}
+  - component: {fileID: 134}
   m_Layer: 0
   m_Name: jugador
   m_TagString: Player
@@ -1749,7 +1749,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.32336956, g: 0.066514924, b: 0.00068420474, a: 1}
+  m_IndirectSpecularColor: {r: 0.32046375, g: 0.06466808, b: 0.009663448, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!108 &102
 Light:
@@ -1813,19 +1813,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!135 &103
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 27}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!157 &104
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -2204,6 +2191,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!65 &134
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.99999994, y: 2.2876282, z: 0.99999994}
+  m_Center: {x: 0.000000029802322, y: 1.14, z: 0}
 --- !u!1 &12305092
 GameObject:
   m_ObjectHideFlags: 0

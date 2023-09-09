@@ -2216,7 +2216,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 120
+  m_Constraints: 112
   m_CollisionDetection: 2
 --- !u!64 &418
 MeshCollider:
@@ -2469,7 +2469,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.32336956, g: 0.066514924, b: 0.00068420474, a: 1}
+  m_IndirectSpecularColor: {r: 0.32046375, g: 0.06466808, b: 0.009663448, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!108 &515
 Light:
@@ -4150,8 +4150,8 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!136 &590
-CapsuleCollider:
+--- !u!65 &590
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4160,10 +4160,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.77
-  m_Height: 2.5
-  m_Direction: 1
-  m_Center: {x: 0, y: 1.2, z: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.99999994, y: 2.2876282, z: 0.99999994}
+  m_Center: {x: 0.000000029802322, y: 1.14, z: 0}
 --- !u!1 &14343855
 GameObject:
   m_ObjectHideFlags: 0
