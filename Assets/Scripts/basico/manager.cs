@@ -8,6 +8,7 @@ using UnityEditor;
 public class manager : MonoBehaviour
 {
 	public int plat = 1;
+	public int nivel = 0;
 	public AudioSource audio;
 	public AudioSource audio1;
 	public AudioSource audio2;
@@ -604,6 +605,7 @@ public class manager : MonoBehaviour
 			boton1.text = "borrar partida";
 			boton2.text = "opciones";
 			boton3.text = "comenzar partida";
+			boton4.text = "salir";
 		}
 		if(menu == -1)
 		{
@@ -908,6 +910,7 @@ public class manager : MonoBehaviour
 			boton1.text = "delete data";
 			boton2.text = "settings";
 			boton3.text = "start adventure";
+			boton4.text = "exit";
 		}
 		if(menu == -1)
 		{
@@ -1212,6 +1215,7 @@ public class manager : MonoBehaviour
 			boton1.text = "Esborra data";
 			boton2.text = "opcions";
 			boton3.text = "comencar joc";
+			boton4.text = "sortir";
 		}
 		if(menu == -1)
 		{

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Rewired;
 using UnityEngine.SceneManagement;
 
@@ -11,16 +12,46 @@ public class pausa : MonoBehaviour
     public int plataforma;
     [SerializeField]private int playerID = 0;
 	[SerializeField]private Player player;
+    public Text boton1;
+    public Text boton2;
+    public Text boton3;
+    public Text boton4;
     public float temp;
     // Start is called before the first frame update
     void Start()
     {
         player = ReInput.players.GetPlayer(playerID);
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        manager manager = UnityEngine.Object.FindObjectOfType<manager>();
+        if(manager.idioma == "es")
+        {
+            boton2.text = "salir";
+            boton1.text = "continuar";
+            if(manager.nivel >= 1 && manager.nivel <= 15)
+            {boton3.text = "salir del nivel";}
+            boton4.text = "pausa";
+        }
+        if(manager.idioma == "en")
+        {
+            boton2.text = "exit";
+            boton1.text = "continue";
+            if(manager.nivel >= 1 && manager.nivel <= 15)
+            {boton3.text = "exit of the level";}
+            boton4.text = "pause";
+        }
+        if(manager.idioma == "cat")
+        {
+            boton2.text = "sortir";
+            boton1.text = "continuar";
+            if(manager.nivel >= 1 && manager.nivel <= 15)
+            {boton3.text = "sortir a la base";}
+            boton4.text = "pausa";
+        }
         if(player.GetAxis("pausa") > 0 && temp > 0.7f)
         {
             continuar();

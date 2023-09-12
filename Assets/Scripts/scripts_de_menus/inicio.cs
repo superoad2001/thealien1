@@ -13,6 +13,7 @@ public class inicio : MonoBehaviour
 	public bool botonm = false;
 	public bool botonn = false;
 	public bool botonc = false;
+	public bool botond = false;
 	public int gemas = 0;
 	public float temp;
 	public AudioSource audio;
@@ -54,6 +55,10 @@ public class inicio : MonoBehaviour
 		{
 			SceneManager.LoadScene("opciones");
 		}
+		if (this.botond == true && temp >= 1)
+		{
+			Application.Quit();
+		}
 	
 
 	}
@@ -68,6 +73,10 @@ public class inicio : MonoBehaviour
 	public void boton_c()
     {
         botonc = true;
+    }
+	public void boton_d()
+    {
+        botond = true;
     }
 
     public void Detenern()

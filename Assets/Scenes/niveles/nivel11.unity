@@ -1231,7 +1231,7 @@ Transform:
   - {fileID: 674798993}
   - {fileID: 58}
   m_Father: {fileID: 1552723215}
-  m_RootOrder: 26
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &54
 Transform:
@@ -1533,7 +1533,7 @@ Transform:
   - {fileID: 91}
   - {fileID: 803267246}
   m_Father: {fileID: 1552723215}
-  m_RootOrder: 27
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &75
 Transform:
@@ -1713,12 +1713,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 38}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -289.24457, y: -983.3364, z: -442.4322}
+  m_LocalPosition: {x: 0, y: 100.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1552723215}
-  m_RootOrder: 25
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &86
 Transform:
@@ -4140,7 +4140,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.04397323, g: 0.10396301, b: 0.1433593, a: 1}
+  m_IndirectSpecularColor: {r: 0.046520352, g: 0.10456786, b: 0.14229167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!108 &199
 Light:
@@ -6493,6 +6493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plat: 1
+  nivel: 11
   audio: {fileID: 0}
   audio1: {fileID: 0}
   audio2: {fileID: 0}
@@ -6750,7 +6751,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1552723215}
-  m_RootOrder: 29
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &29344132
 AudioSource:
@@ -8689,7 +8690,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1552723215}
-  m_RootOrder: 28
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9454,6 +9455,10 @@ MonoBehaviour:
   pausa1: {fileID: 936251174}
   plataforma: 0
   playerID: 0
+  boton1: {fileID: 1415843925}
+  boton2: {fileID: 465388423}
+  boton3: {fileID: 1760551001}
+  boton4: {fileID: 1739063868}
   temp: 0
 --- !u!4 &936251176
 Transform:
@@ -10336,7 +10341,6 @@ Transform:
   - {fileID: 1456370532}
   - {fileID: 76077606}
   - {fileID: 849505326}
-  - {fileID: 85}
   - {fileID: 53}
   - {fileID: 74}
   - {fileID: 668467126}
