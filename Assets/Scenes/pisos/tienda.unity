@@ -1627,7 +1627,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.046520352, g: 0.10456786, b: 0.14229167, a: 1}
+  m_IndirectSpecularColor: {r: 0.04397323, g: 0.10396301, b: 0.1433593, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!108 &131
 Light:
@@ -2223,7 +2223,7 @@ MonoBehaviour:
   velocidad: 4
   velocidadjet: 2
   velocidadr: 20
-  jumpforce: 300
+  jumpforce: 120
   jumpforce2: 150
   jumpforcebase: 0
   tiemposalto: 0

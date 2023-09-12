@@ -818,6 +818,18 @@ public class jugador : MonoBehaviour
 			}
 			else{anim.SetBool("salto",false);}
 		}
+		if (manager.juego == 0)
+		{
+			this.tiemposalto -= Time.deltaTime;
+			if (this.tiemposalto <= 0f && jumpc > 0f )
+			{
+					this._rb.AddForce(this.jumpforce * Vector3.up);
+					this.tiemposalto = 0.9f;
+					jumpforce = jumpforce / 1.8f;
+					anim.SetBool("salto",true);
+			}
+			else{anim.SetBool("salto",false);}
+		}
 		if (manager.juego == 4)
 		{
 			this.tiemposalto -= Time.deltaTime;
@@ -868,7 +880,7 @@ public class jugador : MonoBehaviour
 		{
 			base.transform.Rotate(Vector3.right, 180f);
 		}
-		if (col.gameObject.tag == "suelo")
+		if (col.gameObject.tag == "suelo" || col.gameObject.tag == "ascensor")
 		{
 			jumpforce = jumpforcebase;
 			if(tiempovelint > 2)
