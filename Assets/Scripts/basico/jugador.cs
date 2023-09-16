@@ -918,6 +918,17 @@ public class jugador : MonoBehaviour
 					this.ascensortut.text = "(right click) or (b) to go to the tower of time (left click) or (x) to go downstairs";
 				}
 			}
+			if(manager.idioma == "cat")
+			{
+				if (!this.dentrotienda)
+				{
+					this.ascensortut.text = "(click dret) o (b) per pujar de planta  (click esquerre) o (x) para baixar de planta";
+				}
+					if (manager.piso == 5)
+				{
+					this.ascensortut.text = "(click dret) o (b) per anar a la torre del temps  (click esquerre) o (x) para baixar de planta";
+				}
+			}
 			this.ascensor = true;
 			
 		}
@@ -927,6 +938,8 @@ public class jugador : MonoBehaviour
 			{this.ascensortut.text = "(click derecho) o (b) para subir de planta  ";}
 			if(manager.idioma == "en")
 			{this.ascensortut.text = "(right click) o (b) to go up the floor ";}
+			if(manager.idioma == "cat")
+			{this.ascensortut.text = "(click dret) o (b) per pujar de planta  ";}
 			this.ascensor = true;
 		}
 		if (col.gameObject.tag == "suelo")
