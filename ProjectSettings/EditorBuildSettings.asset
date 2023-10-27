@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/menu/enter.unity
+    guid: 4e28fbcbf5b296143bc5529887c62333
+  - enabled: 1
     path: Assets/Scenes/menu/idioma.unity
     guid: 1f9a41cfe652e1d42848c83831616c7a
   - enabled: 1
@@ -35,9 +38,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/tutnivel/nivel5_c.unity
     guid: 14dcfb600bec7294fbf94c29213d62ee
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/cinematicas/mejora1.unity
     guid: f34e722183940654b84a193562764f24
@@ -264,3 +264,4 @@ EditorBuildSettings:
     com.unity.addressableassets: {fileID: 11400000, guid: 60e500d4749785142a48cafd92bcb866, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: ad744c783bea2044a92ab160dc947c86, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: 7107b4b4fcf81df4988da5b6852fe112, type: 2}
+  m_UseUCBPForAssetBundles: 0
