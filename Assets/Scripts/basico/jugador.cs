@@ -13,6 +13,8 @@ public class jugador : MonoBehaviour
 	public AudioSource audio1;
 	public float temppaso = 1;
 	public float rotspeed = 3;
+
+	public Quaternion fij;
 	public GameObject camara;
 	private float cameraverticalangle;
 	public Vector3 rotationinput;
@@ -41,6 +43,7 @@ public class jugador : MonoBehaviour
 	public int randompaso;
 	public float pausac;
 	public float pasotiempo;
+	public float tempgir = 0;
 	// Token: 0x0600001D RID: 29 RVA: 0x000025E8 File Offset: 0x000007E8
 	private void Start()
 	{
@@ -844,6 +847,12 @@ public class jugador : MonoBehaviour
 		}
 		if(temp9 < 15)
         {temp9 += 1 * Time.deltaTime;}
+		if(tempgir > 0)
+        {tempgir -= 1 * Time.deltaTime;}
+		if(tempgir > 0 && manager.juego == 6)
+		{
+			this.transform.rotation = Quaternion.RotateTowards(transform.rotation, fij,  90 * Time.deltaTime);
+		}
 		
 	}
 
@@ -873,12 +882,14 @@ public class jugador : MonoBehaviour
 	}
 
 	// Token: 0x06000021 RID: 33 RVA: 0x0000318C File Offset: 0x0000138C
-	private void OnCollisionEnter(Collision col)
+	public void OnCollisionEnter(Collision col)
 	{
 		manager manager = UnityEngine.Object.FindObjectOfType<manager>();
 		if (manager.juego == 6)
 		{
-			base.transform.Rotate(Vector3.right, 180f);
+			tempgir = 3;
+			fij = Quaternion.Euler(transform.rotation.eulerAngles.x,transform.rotation.eulerAngles.y + 180f,transform.rotation.eulerAngles.z);
+			
 		}
 		if (col.gameObject.tag == "suelo" || col.gameObject.tag == "ascensor")
 		{
