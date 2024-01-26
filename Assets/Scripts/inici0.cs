@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class inici0 : MonoBehaviour
+public class inici0_al1 : MonoBehaviour
 {
     
 	public bool botonm = false;

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using Rewired;
 using UnityEngine.SceneManagement;
 
-public class pausa : MonoBehaviour
+public class pausa_al1 : MonoBehaviour
 {
     public GameObject juego;
     public GameObject pausa1;
@@ -27,8 +27,8 @@ public class pausa : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        manager manager = UnityEngine.Object.FindObjectOfType<manager>();
-        if(manager.idioma == "es")
+        manager_al1 manager = UnityEngine.Object.FindObjectOfType<manager_al1>();
+        if(manager.datosserial.idioma == "es")
         {
             boton2.text = "salir";
             boton1.text = "continuar";
@@ -36,7 +36,7 @@ public class pausa : MonoBehaviour
             {boton3.text = "salir del nivel";}
             boton4.text = "pausa";
         }
-        if(manager.idioma == "en")
+        if(manager.datosserial.idioma == "en")
         {
             boton2.text = "exit";
             boton1.text = "continue";
@@ -44,7 +44,7 @@ public class pausa : MonoBehaviour
             {boton3.text = "exit of the level";}
             boton4.text = "pause";
         }
-        if(manager.idioma == "cat")
+        if(manager.datosserial.idioma == "cat")
         {
             boton2.text = "sortir";
             boton1.text = "continuar";
@@ -60,8 +60,8 @@ public class pausa : MonoBehaviour
         {temp += 1 * Time.deltaTime;}
     }
     public void continuar(){
-        plataforma = PlayerPrefs.GetInt("plataforma", 1);
-        manager manager = UnityEngine.Object.FindObjectOfType<manager>();
+        manager_al1 manager = UnityEngine.Object.FindObjectOfType<manager_al1>();
+        plataforma = manager.datosserial.plat;
         temp = 0;
         juego.SetActive(true);
         pausa1.SetActive(false);
