@@ -21,7 +21,7 @@ public class portalt_al1 : MonoBehaviour
 	{
 		if (col.gameObject.tag == "jefe")
 		{
-			SceneManager.LoadScene("piso4t");
+			SceneManager.LoadScene("piso4t_al1");
 		}
 	}
 

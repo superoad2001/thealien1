@@ -21,7 +21,7 @@ public class lallegada_al1 : MonoBehaviour
 	{
 		if (col.gameObject.tag == "Player")
 		{
-			SceneManager.LoadScene("cinematicainicial");
+			SceneManager.LoadScene("cinematicainicial_al1");
 		}
 	}
 

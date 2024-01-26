@@ -21,7 +21,7 @@ public class volver_al1 : MonoBehaviour
 	{
 		if (col.gameObject.tag == "Player")
 		{
-			SceneManager.LoadScene("mundo");
+			SceneManager.LoadScene("mundo_al1");
 		}
 	}
 }

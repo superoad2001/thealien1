@@ -29,11 +29,11 @@ public class meta14t_al1 : MonoBehaviour
 				manager.guardar();
 			}
 			
-			SceneManager.LoadScene("piso3t");
+			SceneManager.LoadScene("piso3t_al1");
 		}
 		if (col.gameObject.tag == "coche2")
 		{
-			SceneManager.LoadScene("piso3t");
+			SceneManager.LoadScene("piso3t_al1");
 		}
 	}
 }

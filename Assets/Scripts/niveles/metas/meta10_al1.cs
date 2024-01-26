@@ -28,7 +28,7 @@ public class meta10_al1 : MonoBehaviour
 				manager.datosserial.gemaN10 = 1;
 				manager.guardar();
 			}
-			SceneManager.LoadScene("piso4");
+			SceneManager.LoadScene("piso4_al1");
 		}
 	}
 }

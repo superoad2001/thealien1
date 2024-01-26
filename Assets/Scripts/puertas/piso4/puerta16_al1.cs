@@ -22,7 +22,7 @@ public class puerta16_al1 : MonoBehaviour
 		manager_al1 manager = UnityEngine.Object.FindObjectOfType<manager_al1>();
 		if (col.gameObject.tag == "Player" && manager.datosserial.gemas >= 15 && manager.datosserial.tengollave3 == 1)
 		{
-			SceneManager.LoadScene("nivel15_c");
+			SceneManager.LoadScene("nivel15_c_al1");
 		}
 	}
 }

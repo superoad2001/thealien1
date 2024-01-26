@@ -72,10 +72,10 @@ public class pausa_al1 : MonoBehaviour
 		}
     }
     public void salir(){
-        SceneManager.LoadScene("presentacion");
+        SceneManager.LoadScene("presentacion_al1");
     }
 
     public void salirnivel(){
-        SceneManager.LoadScene("piso1");
+        SceneManager.LoadScene("piso1_al1");
     }
 }

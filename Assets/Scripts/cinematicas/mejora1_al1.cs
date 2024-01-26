@@ -33,7 +33,7 @@ public class mejora1_al1 : MonoBehaviour
     {
         if(!audio.isPlaying)
 		{
-			SceneManager.LoadScene("tienda");
+			SceneManager.LoadScene("tienda_al1");
 		}
     }
 }

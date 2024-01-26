@@ -21,7 +21,7 @@ public class piso2t_al1 : MonoBehaviour
 	{
 		if (col.gameObject.tag == "Player")
 		{
-			SceneManager.LoadScene("piso2t");
+			SceneManager.LoadScene("piso2t_al1");
 		}
 	}
 }

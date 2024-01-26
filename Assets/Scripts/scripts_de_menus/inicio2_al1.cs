@@ -27,13 +27,13 @@ public class inicio2_al1 : MonoBehaviour
 		{
 			manager.datosserial.plat = 1;
 			manager.guardar();
-			SceneManager.LoadScene("menu_de_carga");
+			SceneManager.LoadScene("menu_de_carga_al1");
 		}
 		if (this.botonn == true && temp >= 1)
 		{
 			manager.datosserial.plat = 2;
 			manager.guardar();
-			SceneManager.LoadScene("menu_de_carga");
+			SceneManager.LoadScene("menu_de_carga_al1");
 		}
 
 
@@ -41,19 +41,19 @@ public class inicio2_al1 : MonoBehaviour
 		{
 			manager.datosserial.idioma = "es";
 			manager.guardar();
-			SceneManager.LoadScene("menu_de_carga");
+			SceneManager.LoadScene("menu_de_carga_al1");
 		}
 		if (this.botont == true && temp >= 1)
 		{
 			manager.datosserial.idioma = "en";
 			manager.guardar();
-			SceneManager.LoadScene("menu_de_carga");
+			SceneManager.LoadScene("menu_de_carga_al1");
 		}
 		if (this.botonr == true && temp >= 1)
 		{
 			manager.datosserial.idioma = "cat";
 			manager.guardar();
-			SceneManager.LoadScene("menu_de_carga");
+			SceneManager.LoadScene("menu_de_carga_al1");
 		}
 	}
 		public void boton_m()

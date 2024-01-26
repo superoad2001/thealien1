@@ -33,7 +33,7 @@ public class espacio_c_al1 : MonoBehaviour
 	{
 		if (player.GetAxis("a") > 0f || botonm == true)
 		{
-			SceneManager.LoadScene("espacio");
+			SceneManager.LoadScene("espacio_al1");
 		}
 	}
 	public void boton_m()

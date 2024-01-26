@@ -29,7 +29,7 @@ public class meta3t_al1 : MonoBehaviour
 				manager.guardar();
 			}
 			
-			SceneManager.LoadScene("piso1t");
+			SceneManager.LoadScene("piso1t_al1");
 		}
 	}
 }

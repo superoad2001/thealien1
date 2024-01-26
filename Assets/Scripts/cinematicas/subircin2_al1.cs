@@ -30,7 +30,7 @@ public class subircin2_al1 : MonoBehaviour
 	{
 		if (player.GetAxis("b") > 0f || botonm == true)
 		{
-			SceneManager.LoadScene("espacio");
+			SceneManager.LoadScene("espacio_al1");
 		}
 	}
 	public void boton_m()

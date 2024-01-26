@@ -29,7 +29,7 @@ public class recojemejora_al1 : MonoBehaviour
 			manager.datosserial.tengomejora = 1;
 			manager.guardar();
 			UnityEngine.Object.Destroy(base.gameObject);
-			SceneManager.LoadScene("espacio");
+			SceneManager.LoadScene("espacio_al1");
 
 		}
 	}

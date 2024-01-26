@@ -27,17 +27,17 @@ public class inicio4_al1 : MonoBehaviour
 		{
 			manager.datosserial.plat = 1;
 			manager.guardar();
-			SceneManager.LoadScene("presentacion");
+			SceneManager.LoadScene("presentacion_al1_al1");
 		}
 		if (this.botonn == true && temp >= 1)
 		{
 			manager.datosserial.plat = 2;
 			manager.guardar();
-			SceneManager.LoadScene("presentacion");
+			SceneManager.LoadScene("presentacion_al1_al1");
 		}
 		if(plataforma != 0)
 		{
-			SceneManager.LoadScene("presentacion");
+			SceneManager.LoadScene("presentacion_al1_al1");
 		}
 	}
 		public void boton_m()

@@ -21,12 +21,12 @@ public class inicio1_al1 : MonoBehaviour
 		{temp += 1 * Time.deltaTime;}
 		if (this.botonm == true && temp >= 1)
 		{
-			SceneManager.LoadScene("menu_de_carga");
+			SceneManager.LoadScene("menu_de_carga_al1");
 		}
 		if (this.botonn == true && temp >= 1)
 		{
 			PlayerPrefs.DeleteAll();
-			SceneManager.LoadScene("idioma");
+			SceneManager.LoadScene("idioma_al1");
 		}
 	}
 		public void boton_m()

@@ -21,7 +21,7 @@ public class puerta1t_al1 : MonoBehaviour
 	{
 		if (col.gameObject.tag == "Player")
 		{
-			SceneManager.LoadScene("nivel1t");
+			SceneManager.LoadScene("nivel1t_al1");
 		}
 	}
 }

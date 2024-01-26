@@ -21,7 +21,7 @@ public class mundo2_al1 : MonoBehaviour
 	{
 		if (col.gameObject.tag == "Player")
 		{
-			SceneManager.LoadScene("mundo2");
+			SceneManager.LoadScene("mundo2_al1");
 		}
 	}
 }

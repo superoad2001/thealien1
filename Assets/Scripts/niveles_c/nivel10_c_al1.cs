@@ -31,7 +31,7 @@ public class nivel10_c_al1 : MonoBehaviour
 	{
 		if (player.GetAxis("a") > 0f || botonm == true)
 		{
-			SceneManager.LoadScene("nivel10");
+			SceneManager.LoadScene("nivel10_al1");
 		}
 	}
 	public void boton_m()

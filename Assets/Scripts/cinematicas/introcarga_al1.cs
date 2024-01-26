@@ -22,7 +22,7 @@ public class introcarga_al1 : MonoBehaviour
         temp += 1 * Time.deltaTime;
         if(temp >= 45)
         {
-            SceneManager.LoadScene("menu_de_carga");
+            SceneManager.LoadScene("menu_de_carga_al1");
         }
     }
 }

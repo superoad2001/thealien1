@@ -17,7 +17,7 @@ public class final_al1 : MonoBehaviour
 	{
 		if (botonm == true)
 		{
-			SceneManager.LoadScene("menu_de_carga");
+			SceneManager.LoadScene("menu_de_carga_al1");
 		}
 	}
 		public void boton_m()

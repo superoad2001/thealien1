@@ -22,7 +22,7 @@ public class subircoche_al1 : MonoBehaviour
 		manager_al1 manager = UnityEngine.Object.FindObjectOfType<manager_al1>();
 		if (col.gameObject.tag == "Player" && manager.datosserial.tengocoche == 1)
 		{
-			SceneManager.LoadScene("mundoc");
+			SceneManager.LoadScene("mundoc_al1");
 		}
 	}
 

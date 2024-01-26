@@ -22,7 +22,7 @@ public class presentacion_al1 : MonoBehaviour
         temp += 1 * Time.deltaTime;
         if(temp >= 7)
         {
-            SceneManager.LoadScene("intro");
+            SceneManager.LoadScene("intro_al1");
         }
     }
 }

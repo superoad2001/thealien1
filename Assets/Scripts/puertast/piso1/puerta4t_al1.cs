@@ -21,7 +21,7 @@ public class puerta4t_al1 : MonoBehaviour
 	{
 		if (col.gameObject.tag == "Player")
 		{
-			SceneManager.LoadScene("sala_del_rey");
+			SceneManager.LoadScene("sala_del_rey_al1");
 		}
 	}
 }

@@ -28,23 +28,23 @@ public class inicio3_al1 : MonoBehaviour
 		{
 			manager.datosserial.idioma = "es";
 			manager.guardar();
-			SceneManager.LoadScene("controles");
+			SceneManager.LoadScene("controles_al1");
 		}
 		if (this.botonn == true && temp >= 1)
 		{
 			manager.datosserial.idioma = "en";
 			manager.guardar();
-			SceneManager.LoadScene("controles");
+			SceneManager.LoadScene("controles_al1");
 		}
 		if (this.botonc == true && temp >= 1)
 		{
 			manager.datosserial.idioma = "cat";
 			manager.guardar();
-			SceneManager.LoadScene("controles");
+			SceneManager.LoadScene("controles_al1");
 		}
 		if(idioma != "no")
 		{
-			SceneManager.LoadScene("controles");
+			SceneManager.LoadScene("controles_al1");
 		}
 	}
 	public void boton_m()

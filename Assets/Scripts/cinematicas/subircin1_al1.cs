@@ -31,7 +31,7 @@ public class subircin1_al1 : MonoBehaviour
 	{
 		if (player.GetAxis("b") > 0f || botonm == true)
 		{
-			SceneManager.LoadScene("piso1_c");
+			SceneManager.LoadScene("piso1_c_al1");
 		}
 	}
 	public void boton_m()

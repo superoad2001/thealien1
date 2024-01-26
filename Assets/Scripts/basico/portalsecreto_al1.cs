@@ -29,7 +29,7 @@ public class portalsecreto_al1 : MonoBehaviour
     {
         if (col.gameObject.tag == "Player" && activar == true)
 		{
-			SceneManager.LoadScene("sala_secreta");
+			SceneManager.LoadScene("sala_secreta_al1");
 		}
     }
 }

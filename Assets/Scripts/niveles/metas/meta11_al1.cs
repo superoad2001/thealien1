@@ -28,11 +28,11 @@ public class meta11_al1 : MonoBehaviour
 				manager.datosserial.gemaN11 = 1;
 				manager.guardar();
 			}
-			SceneManager.LoadScene("piso4");
+			SceneManager.LoadScene("piso4_al1");
 		}
 		if (col.gameObject.tag == "coche2")
 		{
-			SceneManager.LoadScene("piso4");
+			SceneManager.LoadScene("piso4_al1");
 		}
 	}
 }

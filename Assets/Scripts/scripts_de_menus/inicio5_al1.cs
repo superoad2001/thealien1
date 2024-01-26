@@ -21,15 +21,15 @@ public class inicio5_al1 : MonoBehaviour
 	{
 		if(idioma == "")
 		{
-			SceneManager.LoadScene("idioma");
+			SceneManager.LoadScene("idioma_al1");
 		}
 		else if(plataforma == 0)
 		{
-			SceneManager.LoadScene("controles");
+			SceneManager.LoadScene("controles_al1");
 		}
 		else
 		{
-			SceneManager.LoadScene("presentacion");
+			SceneManager.LoadScene("presentacion_al1");
 		}
 	}
 }

@@ -43,7 +43,7 @@ public class hiper_al1 : MonoBehaviour
 			{this.tutfinala.text = "pren el (click dret) o la (B) per tornar a casa";}
 			if (player.GetAxis("b") > 0f || botonm == true)
 			{
-				SceneManager.LoadScene("lasalida");
+				SceneManager.LoadScene("lasalida_al1");
 			}
 		}
 	}

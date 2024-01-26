@@ -28,7 +28,7 @@ public class meta7t_al1 : MonoBehaviour
 				manager2.datosserial.recordnv7 = manager2.contador;
 				manager.guardar();
 			}
-			SceneManager.LoadScene("piso3t");
+			SceneManager.LoadScene("piso3t_al1");
 		}
 	}
 }

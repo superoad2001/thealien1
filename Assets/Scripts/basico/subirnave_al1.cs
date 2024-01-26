@@ -22,7 +22,7 @@ public class subirnave_al1 : MonoBehaviour
 		manager_al1 manager = UnityEngine.Object.FindObjectOfType<manager_al1>();
 		if (col.gameObject.tag == "Player" && manager.datosserial.tengonave == 1)
 		{
-			SceneManager.LoadScene("espacio_c");
+			SceneManager.LoadScene("espacio_c_al1");
 		}
 	}
 }

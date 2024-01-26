@@ -20,7 +20,7 @@ public class meta15_al1 : MonoBehaviour
 					manager.datosserial.fragmentoN3 = 1;
 					manager.guardar();
 				}
-				SceneManager.LoadScene("piso4");
+				SceneManager.LoadScene("piso4_al1");
 			}
 		}
 	}

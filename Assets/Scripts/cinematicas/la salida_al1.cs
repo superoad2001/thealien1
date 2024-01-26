@@ -22,7 +22,7 @@ public class lasalidas_al1 : MonoBehaviour
 		if (col.gameObject.tag == "Player")
 		{
 			Debug.Log("Hello: ");
-			SceneManager.LoadScene("final");
+			SceneManager.LoadScene("final_al1");
 		}
 	}
 

@@ -60,22 +60,22 @@ public class manager_al1 : MonoBehaviour
  
     #if UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX
             // mac
-            result = Path.Combine(Application.streamingAssetsPath,"DHdata");
+            result = Path.Combine(Application.streamingAssetsPath,"AlienData");
             result = Path.Combine(result, $"alien1data.data");
     
     #elif UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN
             // windows
-            result = Path.Combine(Application.persistentDataPath,"DHdata");
+            result = Path.Combine(Application.persistentDataPath,"AlienData");
             result = Path.Combine(result, $"alien1data.data");
     
     #elif UNITY_ANDROID
             // android
-            result = Path.Combine(Application.persistentDataPath,"DHdata");
+            result = Path.Combine(Application.persistentDataPath,"AlienData");
             result = Path.Combine(result, $"alien1data.data");
     
     #elif UNITY_IOS
             // ios
-            result = Path.Combine(Application.persistentDataPath,"DHdata");
+            result = Path.Combine(Application.persistentDataPath,"AlienData");
             result = Path.Combine(result, $"alien1data.data");
     #endif
  
@@ -1221,33 +1221,33 @@ public class manager_al1 : MonoBehaviour
 
 		if(datosserial.mejora1 == 0 && datosserial.gemas >= 3 && datosserial.monedas >= 10)
 		{
-			manager.datosserial.mejora1 = 1;
-			manager.guardar();
-			SceneManager.LoadScene("mejora1");
+			manager.datosserial.datosserial.mejora1 = 1;
+			manager.datosserial.guardar();
+			SceneManager.LoadScene("mejora1_al1");
 		}
 		if(datosserial.mejora2 == 0 && datosserial.gemas >= 6 && datosserial.monedas >= 20)
 		{
-			manager.datosserial.mejora2 = 1;
-			manager.guardar();
-			SceneManager.LoadScene("mejora2");
+			manager.datosserial.datosserial.mejora2 = 1;
+			manager.datosserial.guardar();
+			SceneManager.LoadScene("mejora2_al1");
 		}
 		if(datosserial.mejora3 == 0 && datosserial.gemas >= 9 && datosserial.monedas >= 30)
 		{
-			manager.datosserial.mejora3 = 1;
-			manager.guardar();
-			SceneManager.LoadScene("mejora3");
+			manager.datosserial.datosserial.mejora3 = 1;
+			manager.datosserial.guardar();
+			SceneManager.LoadScene("mejora3_al1");
 		}
 		if(datosserial.mejora4 == 0 && datosserial.gemas >= 12 && datosserial.monedas >= 40)
 		{
-			manager.datosserial.mejora4 = 1;
-			manager.guardar();
-			SceneManager.LoadScene("mejora4");
+			manager.datosserial.datosserial.mejora4 = 1;
+			manager.datosserial.guardar();
+			SceneManager.LoadScene("mejora4_al1");
 		}
 		if(datosserial.mejora5 == 0 && datosserial.fragmento >= 3 && datosserial.monedas >= 50)
 		{
-			manager.datosserial.mejora5 = 1;
-			manager.guardar();
-			SceneManager.LoadScene("mejora5");
+			manager.datosserial.datosserial.mejora5 = 1;
+			manager.datosserial.guardar();
+			SceneManager.LoadScene("mejora5_al1");
 		}
 
 	}

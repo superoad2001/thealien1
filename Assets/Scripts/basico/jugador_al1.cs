@@ -386,32 +386,32 @@ public class jugador_al1 : MonoBehaviour
 		}
 		this.tiempovel += Time.deltaTime;
 		this.tiempovelint = (int)this.tiempovel;
-			if(subir1 == true && tiempoascensor > 3){SceneManager.LoadScene("piso2");}
+			if(subir1 == true && tiempoascensor > 3){SceneManager.LoadScene("piso2_al1");}
 			if(bajar1esp == true && tiempoascensor > 3)
 			{
 				manager.datosserial.cinematicaf = 0;
 				manager.guardar();
-				SceneManager.LoadScene("cinematicafinal");
+				SceneManager.LoadScene("cinematicafinal_al1");
 			}
 		if(bajar1 == true && tiempoascensor > 3){SceneManager.LoadScene("mundo");}
-		if(subir0 == true && tiempoascensor > 3){SceneManager.LoadScene("piso1");}
-		if(subir2 == true && tiempoascensor > 3){SceneManager.LoadScene("piso3");}
-		if(bajar2 == true && tiempoascensor > 3){SceneManager.LoadScene("piso1");}
-		if(subir3 == true && tiempoascensor > 3){SceneManager.LoadScene("piso4");}
-		if(bajar3 == true && tiempoascensor > 3){SceneManager.LoadScene("piso2");}
-		if(bajar5 == true && tiempoascensor > 3){SceneManager.LoadScene("piso4");}
-		if(subir5 == true && tiempoascensor > 7){SceneManager.LoadScene("piso1t");}
-		if(subir4 == true && tiempoascensor > 3){SceneManager.LoadScene("piso5");}
-		if(bajar4 == true && tiempoascensor > 3){SceneManager.LoadScene("piso3");}
-		if(subirt1 == true && tiempoascensor > 3){SceneManager.LoadScene("piso2t");}
-		if(bajart1 == true && tiempoascensor > 3){SceneManager.LoadScene("piso5");}
-		if(subirt2 == true && tiempoascensor > 3){SceneManager.LoadScene("piso3t");}
-		if(bajart2 == true && tiempoascensor > 3){SceneManager.LoadScene("piso1t");}
-		if(subirt3 == true && tiempoascensor > 3){SceneManager.LoadScene("piso4t");}
-		if(bajart3 == true && tiempoascensor > 3){SceneManager.LoadScene("piso2t");}
-		if(subirt4 == true && tiempoascensor > 3){SceneManager.LoadScene("piso5t");}
-		if(bajart4 == true && tiempoascensor > 3){SceneManager.LoadScene("piso3t");}
-		if(bajart5 == true && tiempoascensor > 3){SceneManager.LoadScene("piso4t");}
+		if(subir0 == true && tiempoascensor > 3){SceneManager.LoadScene("piso1_al1");}
+		if(subir2 == true && tiempoascensor > 3){SceneManager.LoadScene("piso3_al1");}
+		if(bajar2 == true && tiempoascensor > 3){SceneManager.LoadScene("piso1_al1");}
+		if(subir3 == true && tiempoascensor > 3){SceneManager.LoadScene("piso4_al1");}
+		if(bajar3 == true && tiempoascensor > 3){SceneManager.LoadScene("piso2_al1");}
+		if(bajar5 == true && tiempoascensor > 3){SceneManager.LoadScene("piso4_al1");}
+		if(subir5 == true && tiempoascensor > 7){SceneManager.LoadScene("piso1t_al1");}
+		if(subir4 == true && tiempoascensor > 3){SceneManager.LoadScene("piso5_al1");}
+		if(bajar4 == true && tiempoascensor > 3){SceneManager.LoadScene("piso3_al1");}
+		if(subirt1 == true && tiempoascensor > 3){SceneManager.LoadScene("piso2t_al1");}
+		if(bajart1 == true && tiempoascensor > 3){SceneManager.LoadScene("piso5_al1");}
+		if(subirt2 == true && tiempoascensor > 3){SceneManager.LoadScene("piso3t_al1");}
+		if(bajart2 == true && tiempoascensor > 3){SceneManager.LoadScene("piso1t_al1");}
+		if(subirt3 == true && tiempoascensor > 3){SceneManager.LoadScene("piso4t_al1");}
+		if(bajart3 == true && tiempoascensor > 3){SceneManager.LoadScene("piso2t_al1");}
+		if(subirt4 == true && tiempoascensor > 3){SceneManager.LoadScene("piso5t_al1");}
+		if(bajart4 == true && tiempoascensor > 3){SceneManager.LoadScene("piso3t_al1");}
+		if(bajart5 == true && tiempoascensor > 3){SceneManager.LoadScene("piso4t_al1");}
 
 
 		if (pausac > 0 && temp9 > 0.7f)

@@ -32,7 +32,7 @@ public class inicio_al1 : MonoBehaviour
 
 		if(!audio.isPlaying)
 		{
-			SceneManager.LoadScene("intro");
+			SceneManager.LoadScene("intro_al1");
 		}
 		if (temp < 15)
 		{temp += 1 * Time.deltaTime;}
@@ -41,20 +41,20 @@ public class inicio_al1 : MonoBehaviour
 		{
 			if (gemas >= 1)
 			{
-				SceneManager.LoadScene("piso1_c");
+				SceneManager.LoadScene("piso1_c_al1");
 			}
 			else
 			{
-				SceneManager.LoadScene("lallegada");
+				SceneManager.LoadScene("lallegada_al1");
 			}	
 		}
 		if (this.botonn == true && temp >= 1)
 		{
-			SceneManager.LoadScene("borrar_partida");
+			SceneManager.LoadScene("borrar_partida_al1");
 		}
 		if (this.botonc == true && temp >= 1)
 		{
-			SceneManager.LoadScene("opciones");
+			SceneManager.LoadScene("opciones_al1");
 		}
 		if (this.botond == true && temp >= 1)
 		{
